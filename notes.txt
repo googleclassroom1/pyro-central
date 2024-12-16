@@ -1,0 +1,62 @@
+Button 
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Link Example</title>
+</head>
+<body>
+
+    <a href="https://www.example.com" target="_blank">
+        <img src="https://via.placeholder.com/150" alt="Example Image" />
+    </a>
+
+</body>
+</html>
+Explanation:
+Replace https://www.example.com with the URL of the website you want to link to.
+Replace https://via.placeholder.com/150 with the URL of the image you want to display.
+The target="_blank" attribute makes the link open in a new tab. You can remove it if you want the link to open in the same tab.
+Just copy and paste this code into an HTML file and open it in a web browser to see it in action!
+
+
+make it so if i hover over it it gets bigger
+
+You can achieve a hover effect that enlarges the image using CSS. Here’s an updated version of the previous HTML code that includes CSS for the hover effect:
+
+html
+
+Copy Code
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Link with Hover Effect</title>
+    <style>
+        /* Style for the image */
+        .hover-image {
+            transition: transform 0.3s ease; /* Smooth transition */
+        }
+
+        /* Scale the image on hover */
+        .hover-image:hover {
+            transform: scale(1.2); /* Increase size to 120% */
+        }
+    </style>
+</head>
+<body>
+
+    <a href="https://www.example.com" target="_blank">
+        <img class="hover-image" src="https://via.placeholder.com/150" alt="Example Image" />
+    </a>
+
+</body>
+</html>
+
+
+
+
+
