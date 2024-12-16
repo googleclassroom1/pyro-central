@@ -20,6 +20,7 @@
             width: 90%; /* Set iframe width to 90% */
             height: 90vh; /* Set iframe height to 90% of the viewport height */
             border: none;
+            position: relative; /* Position relative for absolute positioning of the image */
         }
 
         .navbar {
@@ -54,16 +55,13 @@
             color: black; /* Text color on hover */
         }
 
-        .fixed-button {
-            position: fixed; /* Fix the button at the bottom */
+        .fullscreen-image {
+            position: absolute; /* Position the image absolutely within the iframe */
             bottom: 20px; /* Position it 20px from the bottom */
-            left: 20px; /* Position it 20px from the left */
-            background-color: black; /* Black background */
-            color: white; /* White text */
-            border: none; /* No border */
-            padding: 15px 20px; /* Padding for the button */
-            font-size: 16px; /* Font size */
+            right: 20px; /* Position it 20px from the right */
             cursor: pointer; /* Pointer cursor */
+            width: 50px; /* Set the width of the image */
+            height: auto; /* Maintain aspect ratio */
             z-index: 1000; /* Ensure it stays on top of other content */
         }
     </style>
@@ -76,8 +74,14 @@
         </ul>
     </nav>
 
-    <button id="fullscreenBtn" class="fixed-button">Go Fullscreen</button>
-    <iframe id="myIframe" src="https://brunysixlwork.github.io/storage/load/crazygames"></iframe>
+    <iframe id="myIframe" src="https://brunysixlwork.github.io/storage/load/crazygames">
+        Your browser does not support iframes.
+    </iframe>
+
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRTYs-Q9nsk8Bw_gbzwfwe99aKWzFXFrgE60Q&s" 
+         alt="Fullscreen" 
+         class="fullscreen-image" 
+         id="fullscreenBtn">
 
     <script>
         const fullscreenBtn = document.getElementById('fullscreenBtn');
