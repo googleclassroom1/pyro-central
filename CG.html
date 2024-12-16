@@ -24,6 +24,40 @@
             left: 20px;
         }
     </style>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .navbar {
+            background-color: #333; /* Dark background color */
+            overflow: hidden; /* Clear floats */
+        }
+
+        .navbar ul {
+            list-style-type: none; /* Remove bullet points */
+            margin: 0;
+            padding: 0;
+        }
+
+        .navbar li {
+            float: left; /* Align items horizontally */
+        }
+
+        .navbar a {
+            display: block; /* Make links fill the list item */
+            color: white; /* Text color */
+            text-align: center; /* Center text */
+            padding: 14px 16px; /* Padding for links */
+            text-decoration: none; /* Remove underline */
+        }
+
+        .navbar a:hover {
+            background-color: #ddd; /* Light background on hover */
+            color: black; /* Text color on hover */
+        }
+    </style>
 </head>
 <body>
 
@@ -48,4 +82,14 @@
 </script>
 
 </body>
+    <body>
+        <nav class="navbar">
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+    </body>
 </html>
