@@ -3,14 +3,85 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-    <title>Simple Navbar with Pages</title>
+    <title>Responsive Navbar</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #333;
+            padding: 10px 20px;
+        }
+
+        .logo {
+            color: white;
+            font-size: 24px;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-links li {
+            margin-left: 20px;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            padding: 8px 16px;
+            transition: background-color 0.3s;
+        }
+
+        .nav-links a:hover {
+            background-color: #575757;
+            border-radius: 4px;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .nav-links {
+                flex-direction: column;
+                display: none; /* Hide links by default */
+                width: 100%;
+                position: absolute;
+                top: 60px; /* Adjust based on navbar height */
+                left: 0;
+                background-color: #333;
+            }
+
+            .navbar.active .nav-links {
+                display: flex; /* Show links when navbar is active */
+            }
+
+            .navbar .toggle {
+                display: block; /* Show toggle button */
+                cursor: pointer;
+                color: white;
+                font-size: 24px;
+            }
+        }
+
+        /* Toggle button styles */
+        .toggle {
+            display: none;
+        }
+    </style>
 </head>
 <body>
     <nav class="navbar">
         <div class="logo">MyLogo</div>
+        <div class="toggle">&#9776;</div> <!-- Hamburger icon -->
         <ul class="nav-links">
-            <li><a href="nowgg.html">nowgg</a></li>
+            <li><a href="home.html">Home</a></li>
             <li><a href="about.html">About</a></li>
             <li><a href="services.html">Services</a></li>
             <li><a href="contact.html">Contact</a></li>
@@ -20,6 +91,3 @@
     <div class="content">
         <h1>Welcome to My Website</h1>
         <p>This is the home page content.</p>
-    </div>
-</body>
-</html>
