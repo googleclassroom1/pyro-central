@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Classroom</title>
+    <link rel="icon" href="LOLOLOLOLOLOL" type="image/png">
+  <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        iframe {
+            width: 80%;
+            height: 80%;
+            border: none;
+        }
+        button {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<button id="fullscreenBtn">Go Fullscreen</button>
+<iframe id="myIframe" src="https://brunysixlwork.github.io/storage/load/crazygames"></iframe>
+
+<script>
+    const fullscreenBtn = document.getElementById('fullscreenBtn');
+    const myIframe = document.getElementById('myIframe');
+
+    fullscreenBtn.addEventListener('click', () => {
+        if (myIframe.requestFullscreen) {
+            myIframe.requestFullscreen();
+        } else if (myIframe.mozRequestFullScreen) { // Firefox
+            myIframe.mozRequestFullScreen();
+        } else if (myIframe.webkitRequestFullscreen) { // Chrome, Safari and Opera
+            myIframe.webkitRequestFullscreen();
+        } else if (myIframe.msRequestFullscreen) { // IE/Edge
+            myIframe.msRequestFullscreen();
+        }
+    });
+</script>
+
+</body>
+</html>
