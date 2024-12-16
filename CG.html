@@ -5,29 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Google Classroom</title>
     <link rel="icon" href="logo.png" type="image/png">
-  <style>
-        body {
-            margin: 0;
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        iframe {
-            width: 80%;
-            height: 80%;
-            border: none;
-        }
-        button {
-            position: absolute;
-            top: 20px;
-            left: 20px;
-        }
-    </style>
     <style>
         body {
             margin: 0;
             font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh; /* Ensure the body takes at least the full height of the viewport */
+            position: relative; /* Position relative for absolute positioning of button */
+        }
+
+        iframe {
+            width: 80%;
+            height: 80%;
+            border: none;
         }
 
         .navbar {
@@ -36,7 +28,7 @@
             position: fixed; /* Fix the navbar at the top */
             top: 0; /* Position it at the top */
             width: 100%; /* Full width */
-            z-index: 1000;
+            z-index: 1000; /* Ensure it stays on top of other content */
         }
 
         .navbar ul {
@@ -61,36 +53,48 @@
             background-color: #ddd; /* Light background on hover */
             color: black; /* Text color on hover */
         }
+
+        .fixed-button {
+            position: fixed; /* Fix the button at the bottom */
+            bottom: 20px; /* Position it 20px from the bottom */
+            left: 20px; /* Position it 20px from the left */
+            background-color: black; /* Black background */
+            color: white; /* White text */
+            border: none; /* No border */
+            padding: 15px 20px; /* Padding for the button */
+            font-size: 16px; /* Font size */
+            cursor: pointer; /* Pointer cursor */
+            z-index: 1000; /* Ensure it stays on top of other content */
+        }
     </style>
 </head>
 <body>
 
-<button id="fullscreenBtn">Go Fullscreen</button>
-<iframe id="myIframe" src="https://brunysixlwork.github.io/storage/load/crazygames"></iframe>
-
-<script>
-    const fullscreenBtn = document.getElementById('fullscreenBtn');
-    const myIframe = document.getElementById('myIframe');
-
-    fullscreenBtn.addEventListener('click', () => {
-        if (myIframe.requestFullscreen) {
-            myIframe.requestFullscreen();
-        } else if (myIframe.mozRequestFullScreen) { // Firefox
-            myIframe.mozRequestFullScreen();
-        } else if (myIframe.webkitRequestFullscreen) { // Chrome, Safari and Opera
-            myIframe.webkitRequestFullscreen();
-        } else if (myIframe.msRequestFullscreen) { // IE/Edge
-            myIframe.msRequestFullscreen();
-        }
-    });
-</script>
-
-</body>
-    <body>
-        <nav class="navbar">
+    <nav class="navbar">
         <ul>
             <li><a href="index.html">Home</a></li>
         </ul>
     </nav>
-    </body>
+
+    <button id="fullscreenBtn" class="fixed-button">Go Fullscreen</button>
+    <iframe id="myIframe" src="https://brunysixlwork.github.io/storage/load/crazygames"></iframe>
+
+    <script>
+        const fullscreenBtn = document.getElementById('fullscreenBtn');
+        const myIframe = document.getElementById('myIframe');
+
+        fullscreenBtn.addEventListener('click', () => {
+            if (myIframe.requestFullscreen) {
+                myIframe.requestFullscreen();
+            } else if (myIframe.mozRequestFullScreen) { // Firefox
+                myIframe.mozRequestFullScreen();
+            } else if (myIframe.webkitRequestFullscreen) { // Chrome, Safari and Opera
+                myIframe.webkitRequestFullscreen();
+            } else if (myIframe.msRequestFullscreen) { // IE/Edge
+                myIframe.msRequestFullscreen();
+            }
+        });
+    </script>
+
+</body>
 </html>
