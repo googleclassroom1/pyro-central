@@ -6,126 +6,44 @@
     <title>Pyro Central</title>
     <link rel="icon" href="default.ico" type="image/x-icon">
     <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background-color: black;
-            color: white;
-        }
-
-        .navbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background-color: #111; /* Dark background color */
-            padding: 5px 20px; /* Reduced padding for a thinner navbar */
-            position: relative;
-        }
-
-        .logo {
-            color: white;
-            font-size: 24px;
-            display: flex;
-            align-items: center;
-        }
-
-        .logo img {
-            width: 40px; /* Adjust logo size */
-            height: auto;
-            margin-right: 10px; /* Space between text and logo */
-        }
-
-        .nav-links {
-            list-style: none;
-            display: flex;
-            margin: 0;
-            padding: 0;
-        }
-
-        .nav-links li {
-            margin-left: 20px;
-        }
-
-        .nav-links a {
-            color: white;
-            text-decoration: none;
-            padding: 8px 16px;
-            transition: background-color 0.3s;
-        }
-
-        .nav-links a:hover {
-            background-color: #575757;
-            border-radius: 4px;
-        }
-
-        /* Responsive Styles */
+        body { margin: 0; font-family: Arial, sans-serif; background: black; color: white; }
+        .navbar { display: flex; justify-content: space-between; align-items: center; background: #111; padding: 5px 20px; }
+        .logo { color: white; font-size: 24px; display: flex; align-items: center; }
+        .logo img { width: 40px; margin-right: 10px; }
+        .nav-links { list-style: none; display: flex; margin: 0; padding: 0; }
+        .nav-links li { margin-left: 20px; }
+        .nav-links a { color: white; text-decoration: none; padding: 8px 16px; transition: background 0.3s; }
+        .nav-links a:hover { background: #575757; border-radius: 4px; }
         @media (max-width: 768px) {
-            .nav-links {
-                flex-direction: column;
-                display: none; /* Hide links by default */
-                width: 100%;
-                position: absolute;
-                top: 60px; /* Adjust based on navbar height */
-                left: 0;
-                background-color: #111; /* Match the navbar background */
-            }
-
-            .navbar.active .nav-links {
-                display: flex; /* Show links when navbar is active */
-            }
-
-            .toggle {
-                display: block; /* Show toggle button */
-                cursor: pointer;
-                color: white;
-                font-size: 24px;
-            }
+            .nav-links { flex-direction: column; display: none; width: 100%; position: absolute; top: 60px; left: 0; background: #111; }
+            .navbar.active .nav-links { display: flex; }
+            .toggle { display: block; cursor: pointer; color: white; font-size: 24px; }
         }
-
-        .toggle {
-            display: none; /* Hide toggle button by default */
-        }
-
-        .content {
-            padding: 20px;
-            text-align: center;
-        }
-
-        h1 {
-            margin-top: 20px;
-        }
+        .toggle { display: none; }
+        .content { padding: 20px; text-align: center; }
+        h1 { margin-top: 20px; }
     </style>
 </head>
 <body>
     <nav class="navbar">
         <div class="logo">
-            <img src="pyro-logo.png" alt="Pyro Central Logo">
-            Pyro Central
+            <img src="pyro-logo.png" alt="Pyro Central Logo"> Pyro Central
         </div>
-        <div class="toggle" onclick="toggleMenu()">&#9776;</div> <!-- Hamburger icon -->
+        <div class="toggle" onclick="toggleMenu()">&#9776;</div>
         <ul class="nav-links">
-            <li>
-                <a href="CG.html">
-                    <img src="crazy-games-logo.png" alt="Crazy Games" style="width: 40px; height: auto;"> <!-- Replace with your image -->
-                </a>
-            </li>
+            <li><a href="CG.html">Crazy Games</a></li>
             <li><a href="SC.html">Snapchat</a></li>
             <li><a href="proxy.html">Google</a></li>
             <li><a href="nowgg.html">Now.gg</a></li>
             <li><a href="tiktok.html">TikTok</a></li>
         </ul>
     </nav>
-
     <div class="content">
         <h1>Welcome to Pyro Central</h1>
         <p>Hi guys, enjoy your stay!</p>
     </div>
-
     <script>
-        function toggleMenu() {
-            const navbar = document.querySelector('.navbar');
-            navbar.classList.toggle('active');
-        }
+        function toggleMenu() { document.querySelector('.navbar').classList.toggle('active'); }
     </script>
 </body>
 </html>
