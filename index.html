@@ -8,7 +8,7 @@
     <style>
         body { margin: 0; font-family: Arial, sans-serif; background: black; color: white; }
         .navbar { display: flex; justify-content: space-between; align-items: center; background: #111; padding: 5px 20px; }
-        .logo { color: white; font-size: 24px; display: flex; align-items: center; }
+        .logo { color: white; font-size: 24px; font-weight: bold; display: flex; align-items: center; }
         .logo img { width: 40px; margin-right: 10px; }
         .nav-links { list-style: none; display: flex; margin: 0; padding: 0; }
         .nav-links li { margin-left: 20px; }
@@ -21,15 +21,14 @@
         }
         .toggle { display: none; }
         .content { padding: 20px; text-align: center; }
-        h1 { margin-top: 20px; }
     </style>
 </head>
 <body>
     <nav class="navbar">
         <div class="logo">
-            <img src="pyro-logo.png" alt="Pyro Central Logo"> Pyro Central
+            <img src="pyro-logo.png" alt="Logo"> Pyro Central
         </div>
-        <div class="toggle" onclick="toggleMenu()">&#9776;</div>
+        <div class="toggle" onclick="document.querySelector('.navbar').classList.toggle('active')">&#9776;</div>
         <ul class="nav-links">
             <li><a href="CG.html">Crazy Games</a></li>
             <li><a href="SC.html">Snapchat</a></li>
@@ -43,8 +42,5 @@
         <h1>Welcome to Pyro Central</h1>
         <p>my website for restricted chromebook users</p>
     </div>
-    <script>
-        function toggleMenu() { document.querySelector('.navbar').classList.toggle('active'); }
-    </script>
 </body>
 </html>
