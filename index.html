@@ -3,12 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Google Classroom</title>
+    <title>Pyro Central</title>
     <link rel="icon" href="default.ico" type="image/x-icon">
     <style>
         body {
             margin: 0;
             font-family: Arial, sans-serif;
+            background-color: black;
+            color: white;
         }
 
         .navbar {
@@ -17,11 +19,20 @@
             align-items: center;
             background-color: #333;
             padding: 10px 20px;
+            position: relative;
         }
 
         .logo {
             color: white;
             font-size: 24px;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            width: 40px; /* Adjust logo size */
+            height: auto;
+            margin-right: 10px; /* Space between text and logo */
         }
 
         .nav-links {
@@ -63,7 +74,7 @@
                 display: flex; /* Show links when navbar is active */
             }
 
-            .navbar .toggle {
+            .toggle {
                 display: block; /* Show toggle button */
                 cursor: pointer;
                 color: white;
@@ -71,31 +82,46 @@
             }
         }
 
-        /* Toggle button styles */
         .toggle {
-            display: none;
+            display: none; /* Hide toggle button by default */
         }
 
-        body {
-            background-color: black;
-            color: white; /* Optional: Change text color to white for better visibility */
+        .content {
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            margin-top: 20px;
         }
     </style>
 </head>
 <body>
     <nav class="navbar">
-        <div class="logo">Pyro Central</div>
-        <img src="navlogo.png" alt="Pyro Central Logo" class="logo">
-        <div class="toggle">&#9776;</div> <!-- Hamburger icon -->
+        <div class="logo">
+            <img src="navlogo.png" alt="Pyro Central Logo">
+            Pyro Central
+        </div>
+        <div class="toggle" onclick="toggleMenu()">&#9776;</div> <!-- Hamburger icon -->
         <ul class="nav-links">
-            <li><a href="CG.html">crazy games</a></li>
-            <li><a href="SC.html">snapchat</a></li>
-            <li><a href="proxy.html">google</a></li>
-            <li><a href="nowgg.html">now.gg</a></li>
-            <li><a href="tiktok.html">Tiktok</a></li>
+            <li><a href="CG.html">Crazy Games</a></li>
+            <li><a href="SC.html">Snapchat</a></li>
+            <li><a href="proxy.html">Google</a></li>
+            <li><a href="nowgg.html">Now.gg</a></li>
+            <li><a href="tiktok.html">TikTok</a></li>
         </ul>
     </nav>
 
     <div class="content">
-        <h1>Pyro Central</h1>
-        <p>Hi guys</p>
+        <h1>Welcome to Pyro Central</h1>
+        <p>Hi guys, enjoy your stay!</p>
+    </div>
+
+    <script>
+        function toggleMenu() {
+            const navbar = document.querySelector('.navbar');
+            navbar.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>
