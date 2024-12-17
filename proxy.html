@@ -1,1 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Classroom</title>
+    <link rel="icon" href="logo.png" type="image/png">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh; /* Ensure the body takes at least the full height of the viewport */
+            position: relative; /* Position relative for absolute positioning of button */
+        }
 
+        iframe {
+            width: 90%; /* Set iframe width to 90% */
+            height: 90vh; /* Set iframe height to 90% of the viewport height */
+            border: none;
+            position: relative; /* Position relative for absolute positioning of the image */
+        }
+
+        .navbar {
+            background-color: #333; /* Dark background color */
+            overflow: hidden; /* Clear floats */
+            position: fixed; /* Fix the navbar at the top */
+            top: 0; /* Position it at the top */
+            width: 100%; /* Full width */
+            z-index: 1000; /* Ensure it stays on top of other content */
+        }
+
+        .navbar ul {
+            list-style-type: none; /* Remove bullet points */
+            margin: 0;
+            padding: 0;
+        }
+
+        .navbar li {
+            float: left; /* Align items horizontally */
+        }
+
+        .navbar a {
+            display: block; /* Make links fill the list item */
+            color: white; /* Text color */
+            text-align: center; /* Center text */
+            padding: 14px 16px; /* Padding for links */
+            text-decoration: none; /* Remove underline */
+        }
+
+        .navbar a:hover {
+            background-color: #ddd; /* Light background on hover */
+            color: black; /* Text color on hover */
+        }
+
+        .fullscreen-image {
+            position: absolute; /* Position the image absolutely within the iframe */
+            bottom: 20px; /* Position it 20px from the bottom */
+            left: 10px; /* Move it 10px from the left (adjusted) */
+            cursor: pointer; /* Pointer cursor */
+            width: 50px; /* Set the width of the image */
+            height: auto; /* Maintain aspect ratio */
+            z-index: 1000; /* Ensure it stays on top of other content */
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+        </ul>
+    </nav>
+
+    <iframe id="myIframe" src="https://brunysixlwork.github.io/storage/load/google">
+        Your browser does not support iframes.
+    </iframe>
+
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT6si_0-dG6gUHmBRdtkxdXfZEhJpEkrE2EbQ&s" 
+         alt="Fullscreen" 
+         class="fullscreen-image" 
+         id="fullscreenBtn">
+
+    <script>
+        const fullscreenBtn = document.getElementById('fullscreenBtn');
+        const myIframe = document.getElementById('myIframe');
+
+        fullscreenBtn.addEventListener('click', () => {
+            if (myIframe.requestFullscreen) {
+                myIframe.requestFullscreen();
+            } else if (myIframe.mozRequestFullScreen) { // Firefox
+                myIframe.mozRequestFullScreen();
+            } else if (myIframe.webkitRequestFullscreen) { // Chrome, Safari and Opera
+                myIframe.webkitRequestFullscreen();
+            } else if (myIframe.msRequestFullscreen) { // IE/Edge
+                myIframe.msRequestFullscreen();
+            }
+        });
+    </script>
+
+</body>
+</html>
