@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>pyro Central</title>
+    <title>JotForm</title>
     <link rel="icon" href="pyro-logo.png" type="image/png">
     <style>
         body {
@@ -19,10 +19,10 @@
         }
 
         iframe {
-            width: 640px; /* Set iframe width to 640px */
-            height: 480px; /* Set iframe height to 480px */
-            border: none;
-            position: relative; /* Position relative for absolute positioning of the image */
+            min-width: 100%; /* Set minimum width to 100% */
+            max-width: 100%; /* Set maximum width to 100% */
+            height: 539px; /* Set iframe height */
+            border: none; /* No border */
         }
 
         .navbar {
@@ -56,16 +56,6 @@
             background-color: #ddd; /* Light background on hover */
             color: black; /* Text color on hover */
         }
-
-        .fullscreen-image {
-            position: absolute; /* Position the image absolutely within the iframe */
-            bottom: 20px; /* Position it 20px from the bottom */
-            left: 10px; /* Move it 10px from the left (adjusted) */
-            cursor: pointer; /* Pointer cursor */
-            width: 50px; /* Set the width of the image */
-            height: auto; /* Maintain aspect ratio */
-            z-index: 1000; /* Ensure it stays on top of other content */
-        }
     </style>
 </head>
 <body>
@@ -76,40 +66,20 @@
         </ul>
     </nav>
 
-    <iframe id="myIframe" src="https://forms.office.com/Pages/ResponsePage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAAN__4ZvcYdUM0QyNjhFN01POVY3SUY1WlJJNExGUzc1Ri4u&embed=true" 
-            frameborder="0" 
-            marginwidth="0" 
-            marginheight="0" 
-            style="border: none; max-width:100%; max-height:100vh" 
-            allowfullscreen 
-            webkitallowfullscreen 
-            mozallowfullscreen 
-            msallowfullscreen>
-        Your browser does not support iframes.
+    <iframe
+      id="JotFormIFrame-243515933907058"
+      title="Form"
+      onload="window.parent.scrollTo(0,0)"
+      allowtransparency="true"
+      allow="geolocation; microphone; camera; fullscreen"
+      src="https://form.jotform.com/243515933907058"
+      frameborder="0"
+      style="min-width:100%;max-width:100%;height:539px;border:none;"
+      scrolling="no"
+    >
     </iframe>
-
-    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT6si_0-dG6gUHmBRdtkxdXfZEhJpEkrE2EbQ&s" 
-         alt="Fullscreen" 
-         class="fullscreen-image" 
-         id="fullscreenBtn">
-
-    <script>
-        const fullscreenBtn = document.getElementById('fullscreenBtn');
-        const myIframe = document.getElementById('myIframe');
-
-        fullscreenBtn.addEventListener('click', () => {
-            if (myIframe.requestFullscreen) {
-                myIframe.requestFullscreen();
-            } else if (myIframe.mozRequestFullScreen) { // Firefox
-                myIframe.mozRequestFullScreen();
-            } else if (myIframe.webkitRequestFullscreen) { // Chrome, Safari and Opera
-                myIframe.webkitRequestFullscreen();
-            } else if (myIframe.msRequestFullscreen) { // IE/Edge
-                myIframe.msRequestFullscreen();
-            }
-        });
-    </script>
+    <script src='https://cdn.jotfor.ms/s/umd/latest/for-form-embed-handler.js'></script>
+    <script>window.jotformEmbedHandler("iframe[id='JotFormIFrame-243515933907058']", "https://form.jotform.com/")</script>
 
 </body>
 </html>
-
