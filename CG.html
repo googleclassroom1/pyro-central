@@ -83,9 +83,6 @@
             padding: 20px; 
             text-align: center; 
         }
-        .iframe {
-            height: 1350px;
-            width: 500px;
     </style>
 </head>
 <body>
@@ -106,21 +103,10 @@
         </ul>
     </nav>
 
-    <iframe id="myIframe" src="https://brunysixlwork.github.io/storage/load/crazygames">
-        Your browser does not support iframes.
-    </iframe>
+    <div class="content">
+        <h1>Welcome to Pyro Central!</h1>
+        <p>Your one-stop destination for fun and games.</p>
+    </div>
 
-    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT6si_0-dG6gUHmBRdtkxdXfZEhJpEkrE2EbQ&s" 
-         alt="Fullscreen" 
-         class="fullscreen-image" 
-         id="fullscreenBtn">
-
-    <script>
-        const fullscreenBtn = document.getElementById('fullscreenBtn');
-        const myIframe = document.getElementById('myIframe');
-
-        fullscreenBtn.addEventListener('click', () => {
-            if (myIframe.requestFullscreen) {
-                myIframe.requestFullscreen();
-            } else if (myIframe.mozRequestFullScreen) { // Firefox
-                myIframe.mozRequestFullScreen();
+</body>
+</html>
