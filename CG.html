@@ -30,20 +30,37 @@
             top: 0; /* Position it at the top */
             width: 100%; /* Full width */
             z-index: 1000; /* Ensure it stays on top of other content */
+            display: flex; /* Use flexbox for layout */
+            justify-content: space-between; /* Space between logo and links */
+            align-items: center; /* Center items vertically */
+            padding: 10px 20px; /* Padding for navbar */
+        }
+
+        .logo {
+            color: white; 
+            font-size: 24px; 
+            font-weight: bold; 
+            display: flex; 
+            align-items: center; 
+        }
+
+        .logo img {
+            width: 40px; 
+            margin-right: 10px; 
         }
 
         .navbar ul {
             list-style-type: none; /* Remove bullet points */
             margin: 0;
             padding: 0;
+            display: flex; /* Use flexbox for horizontal layout */
         }
 
         .navbar li {
-            float: left; /* Align items horizontally */
+            margin-left: 20px; /* Space between links */
         }
 
         .navbar a {
-            display: block; /* Make links fill the list item */
             color: white; /* Text color */
             text-align: center; /* Center text */
             padding: 14px 16px; /* Padding for links */
@@ -69,8 +86,17 @@
 <body>
 
     <nav class="navbar">
+        <div class="logo">
+            <img src="pyro-logo.png" alt="Logo"> Pyro Central
+        </div>
         <ul>
             <li><a href="index.html">Home</a></li>
+            <li><a href="CG.html">Crazy Games</a></li>
+            <li><a href="SC.html">Snapchat</a></li>
+            <li><a href="proxy.html">Google</a></li>
+            <li><a href="nowgg.html">Now.gg</a></li>
+            <li><a href="tiktok.html">TikTok</a></li>
+            <li><a href="forms.html">Suggestions</a></li>
         </ul>
     </nav>
 
@@ -87,19 +113,6 @@
         const fullscreenBtn = document.getElementById('fullscreenBtn');
         const myIframe = document.getElementById('myIframe');
 
-        fullscreenBtn.addEventListener('click', () => {
-            if (myIframe.requestFullscreen) {
-                myIframe.requestFullscreen();
-            } else if (myIframe.mozRequestFullScreen) { // Firefox
-                myIframe.mozRequestFullScreen();
-            } else if (myIframe.webkitRequestFullscreen) { // Chrome, Safari and Opera
-                myIframe.webkitRequestFullscreen();
-            } else if (myIframe.msRequestFullscreen) { // IE/Edge
-                myIframe.msRequestFullscreen();
-            }
-        });
-    </script>
+       
 
-</body>
-</html>
 
