@@ -6,80 +6,82 @@
     <title>Pyro Central</title>
     <link rel="icon" href="pyro-logo.png" type="image/png">
     <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh; /* Ensure the body takes at least the full height of the viewport */
-            position: relative; /* Position relative for absolute positioning of button */
-        }
-
-        iframe {
-            width: 90%; /* Set iframe width to 90% */
-            height: 90vh; /* Set iframe height to 90% of the viewport height */
-            border: none;
-            position: relative; /* Position relative for absolute positioning of the image */
-        }
-
-        .navbar {
-            background-color: #333; /* Dark background color */
-            overflow: hidden; /* Clear floats */
-            position: fixed; /* Fix the navbar at the top */
-            top: 0; /* Position it at the top */
-            width: 100%; /* Full width */
-            z-index: 1000; /* Ensure it stays on top of other content */
-            display: flex; /* Use flexbox for layout */
-            justify-content: space-between; /* Space between logo and links */
-            align-items: center; /* Center items vertically */
-            padding: 5px 20px; /* Reduced padding for a thinner navbar */
-        }
-
-        .logo {
+        body { 
+            margin: 0; 
+            font-family: Arial, sans-serif; 
+            background: black; 
             color: white; 
-            font-size: 20px; /* Reduced font size */
+        }
+        .navbar { 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            background: #111; 
+            padding: 5px 20px; 
+            position: fixed; 
+            top: 0; 
+            width: 100%; 
+            z-index: 1000; 
+        }
+        .logo { 
+            color: white; 
+            font-size: 24px; 
             font-weight: bold; 
             display: flex; 
             align-items: center; 
         }
-
-        .logo img {
-            width: 30px; /* Adjusted logo size */
+        .logo img { 
+            width: 40px; 
             margin-right: 10px; 
         }
-
-        .navbar ul {
-            list-style-type: none; /* Remove bullet points */
-            margin: 0;
-            padding: 0;
-            display: flex; /* Use flexbox for horizontal layout */
+        .nav-links { 
+            list-style: none; 
+            display: flex; 
+            margin: 0; 
+            padding: 0; 
         }
-
-        .navbar li {
-            margin-left: 15px; /* Space between links */
+        .nav-links li { 
+            margin-left: 20px; 
         }
-
-        .navbar a {
-            color: white; /* Text color */
-            text-align: center; /* Center text */
-            padding: 10px 12px; /* Reduced padding for links */
-            text-decoration: none; /* Remove underline */
+        .nav-links a { 
+            color: white; 
+            text-decoration: none; 
+            padding: 8px 16px; 
+            transition: background 0.3s; 
         }
-
-        .navbar a:hover {
-            background-color: #ddd; /* Light background on hover */
-            color: black; /* Text color on hover */
+        .nav-links a:hover { 
+            background: #575757; 
+            border-radius: 4px; 
         }
-
-        .fullscreen-image {
-            position: absolute; /* Position the image absolutely within the iframe */
-            bottom: 20px; /* Position it 20px from the bottom */
-            left: 10px; /* Move it 10px from the left (adjusted) */
-            cursor: pointer; /* Pointer cursor */
-            width: 50px; /* Set the width of the image */
-            height: auto; /* Maintain aspect ratio */
-            z-index: 1000; /* Ensure it stays on top of other content */
+        .nav-links .bold { 
+            font-weight: bold; 
+        }
+        @media (max-width: 768px) {
+            .nav-links { 
+                flex-direction: column; 
+                display: none; 
+                width: 100%; 
+                position: absolute; 
+                top: 60px; 
+                left: 0; 
+                background: #111; 
+            }
+            .navbar.active .nav-links { 
+                display: flex; 
+            }
+            .toggle { 
+                display: block; 
+                cursor: pointer; 
+                color: white; 
+                font-size: 24px; 
+            }
+        }
+        .toggle { 
+            display: none; 
+        }
+        .content { 
+            padding: 20px; 
+            text-align: center; 
         }
     </style>
 </head>
@@ -89,9 +91,10 @@
         <div class="logo">
             <img src="pyro-logo.png" alt="Logo"> Pyro Central
         </div>
-        <ul>
+        <div class="toggle" onclick="document.querySelector('.navbar').classList.toggle('active')">&#9776;</div>
+        <ul class="nav-links">
             <li><a href="index.html">Home</a></li>
-            <li><a href="CG.html">Crazy Games</a></li>
+            <li><a href="CG.html" class="bold">Crazy Games</a></li>
             <li><a href="SC.html">Snapchat</a></li>
             <li><a href="proxy.html">Google</a></li>
             <li><a href="nowgg.html">Now.gg</a></li>
@@ -111,5 +114,10 @@
 
     <script>
         const fullscreenBtn = document.getElementById('fullscreenBtn');
-        const myIframe = document.getElementById('myIframe
+        const myIframe = document.getElementById('myIframe');
 
+        fullscreenBtn.addEventListener('click', () => {
+            if (myIframe.requestFullscreen) {
+                myIframe.requestFullscreen();
+            } else if (myIframe.mozRequestFullScreen) { // Firefox
+                myIframe.mozRequestFullScreen();
