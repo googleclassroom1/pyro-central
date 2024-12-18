@@ -9,97 +9,141 @@
         body {
             margin: 0;
             font-family: Arial, sans-serif;
+            background: black;
+            color: white;
+        }
+
+        .site-header {
             display: flex;
-            justify-content: center;
+            justify-content: space-between;
             align-items: center;
-            min-height: 100vh; /* Ensure the body takes at least the full height of the viewport */
-            position: relative; /* Position relative for absolute positioning of button */
+            background: #111;
+            padding: 5px 20px;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        .site-nav {
+            display: flex;
+            align-items: center; /* Center items vertically */
+            width: 100%; /* Ensure the nav takes full width */
+        }
+
+        .logo {
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            width: 40px;
+            margin-right: 10px;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+            margin-left: 20px; /* Space between logo and nav links */
+        }
+
+        .nav-links li {
+            margin-left: 20px; /* Space between each nav link */
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            padding: 8px 16px;
+            transition: background 0.3s;
+        }
+
+        .nav-links a:hover {
+            background: #575757;
+            border-radius: 4px;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                flex-direction: column;
+                display: none;
+                width: 100%;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                background: #111;
+            }
+            .site-nav.active .nav-links {
+                display: flex;
+            }
+            .toggle {
+                display: block;
+                cursor: pointer;
+                color: white;
+                font-size: 24px;
+            }
+        }
+
+        .toggle {
+            display: none;
+        }
+
+        .site-main {
+            padding: 20px;
+            text-align: center;
+            margin-top: 60px; /* Add margin to account for the fixed navbar */
         }
 
         iframe {
             width: 90%; /* Set iframe width to 90% */
             height: 90vh; /* Set iframe height to 90% of the viewport height */
             border: none;
-            position: relative; /* Position relative for absolute positioning of the image */
-        }
-
-        .navbar {
-            background-color: #333; /* Dark background color */
-            overflow: hidden; /* Clear floats */
-            position: fixed; /* Fix the navbar at the top */
-            top: 0; /* Position it at the top */
-            width: 100%; /* Full width */
-            z-index: 1000; /* Ensure it stays on top of other content */
-        }
-
-        .navbar ul {
-            list-style-type: none; /* Remove bullet points */
-            margin: 0;
-            padding: 0;
-        }
-
-        .navbar li {
-            float: left; /* Align items horizontally */
-        }
-
-        .navbar a {
-            display: block; /* Make links fill the list item */
-            color: white; /* Text color */
-            text-align: center; /* Center text */
-            padding: 14px 16px; /* Padding for links */
-            text-decoration: none; /* Remove underline */
-        }
-
-        .navbar a:hover {
-            background-color: #ddd; /* Light background on hover */
-            color: black; /* Text color on hover */
-        }
-
-        .fullscreen-image {
-            position: absolute; /* Position the image absolutely within the iframe */
-            bottom: 20px; /* Position it 20px from the bottom */
-            left: 10px; /* Move it 10px from the left (adjusted) */
-            cursor: pointer; /* Pointer cursor */
-            width: 50px; /* Set the width of the image */
-            height: auto; /* Maintain aspect ratio */
-            z-index: 1000; /* Ensure it stays on top of other content */
         }
     </style>
 </head>
 <body>
-
-    <nav class="navbar">
-        <ul>
-            <li><a href="index.html">Home</a></li>
-        </ul>
-    </nav>
-
-    <iframe id="myIframe" src="https://brunysixlwork.github.io/storage/load/tiktok">
-        Your browser does not support iframes.
-    </iframe>
-
-    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT6si_0-dG6gUHmBRdtkxdXfZEhJpEkrE2EbQ&s" 
-         alt="Fullscreen" 
-         class="fullscreen-image" 
-         id="fullscreenBtn">
+    <header class="site-header">
+        <nav class="site-nav">
+            <div class="logo">
+                <img src="pyro-logo.png" alt="Logo"> Pyro Central
+            </div>
+            <ul class="nav-links">
+                <li><a href="proxy.html">Google</a></li>
+                <li><a href="tiktok.html">TikTok</a></li>
+                <li><a href="SC.html">Snap</a></li>
+                <li><a href="CG.html">CrazyGames</a></li>
+                <li><a href="nowgg.html">Now.gg</a></li>
+                <li><a href="forms.html">Add</a></li>
+                <li><a href="#" id="fullscreenLink">Fullscreen</a></li>
+            </ul>
+            <div class="toggle" onclick="document.querySelector('.site-nav').classList.toggle('active')">&#9776;</div>
+        </nav>
+    </header>
+    <main class="site-main">
+        <iframe id="myIframe" src="https://brunysixlwork.github.io/storage/load/snapchat">
+            Your browser does not support iframes.
+        </iframe>
+    </main>
 
     <script>
-        const fullscreenBtn = document.getElementById('fullscreenBtn');
+        const fullscreenLink = document.getElementById('fullscreenLink');
         const myIframe = document.getElementById('myIframe');
 
-        fullscreenBtn.addEventListener('click', () => {
-            if (myIframe.requestFullscreen) {
-                myIframe.requestFullscreen();
-            } else if (myIframe.mozRequestFullScreen) { // Firefox
-                myIframe.mozRequestFullScreen();
-            } else if (myIframe.webkitRequestFullscreen) { // Chrome, Safari and Opera
-                myIframe.webkitRequestFullscreen();
-            } else if (myIframe.msRequestFullscreen) { // IE/Edge
-                myIframe.msRequestFullscreen();
+        fullscreenLink.addEventListener('click', (event) => {
+            event.preventDefault(); // Prevent the default anchor behavior
+            if (!document.fullscreenElement) {
+                myIframe.requestFullscreen().catch(err => {
+                    console.log(`Error attempting to enable full-screen mode: ${err.message} (${err.name})`);
+                });
+            } else {
+                document.exitFullscreen();
             }
         });
     </script>
-
 </body>
 </html>
-
