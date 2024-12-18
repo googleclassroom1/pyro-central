@@ -104,17 +104,6 @@
             height: 90vh; /* Set iframe height to 90% of the viewport height */
             border: none;
         }
-
-        .fullscreen-button {
-            cursor: pointer;
-            background: rgba(255, 255, 255, 0.8);
-            border: none;
-            padding: 10px 15px;
-            border-radius: 5px;
-            color: black;
-            font-weight: bold;
-            margin-left: auto; /* Push the button to the far right */
-        }
     </style>
 </head>
 <body>
@@ -131,8 +120,8 @@
                 <li><a href="CG.html">CrazyGames</a></li>
                 <li><a href="nowgg.html">Now.gg</a></li>
                 <li><a href="forms.html">Add</a></li>
+                <li><a href="#" id="fullscreenLink">Fullscreen</a></li>
             </ul>
-            <button class="fullscreen-button" id="fullscreenBtn">Fullscreen</button>
         </nav>
     </header>
     <main class="site-main">
@@ -142,10 +131,11 @@
     </main>
 
     <script>
-        const fullscreenBtn = document.getElementById('fullscreenBtn');
+        const fullscreenLink = document.getElementById('fullscreenLink');
         const myIframe = document.getElementById('myIframe');
 
-        fullscreenBtn.addEventListener('click', () => {
+        fullscreenLink.addEventListener('click', (event) => {
+            event.preventDefault(); // Prevent the default anchor behavior
             if (!document.fullscreenElement) {
                 myIframe.requestFullscreen().catch(err => {
                     console.log(`Error attempting to enable full-screen mode: ${err.message} (${err.name})`);
