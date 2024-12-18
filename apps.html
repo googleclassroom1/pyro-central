@@ -90,9 +90,8 @@
         }
 
         .container {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-            gap: 20px;
+            display: flex; /* Use flexbox for layout */
+            justify-content: center; /* Center the items */
             padding: 20px;
             margin-top: 70px; /* To avoid the navbar overlapping content */
         }
@@ -101,6 +100,9 @@
             position: relative;
             cursor: pointer;
             text-align: center;
+            width: 80%; /* Set width to 80% to make icons smaller */
+            max-width: 150px; /* Optional: Limit max width */
+            margin: 0 10px; /* Margin between icons */
         }
 
         .image-item img {
@@ -136,20 +138,12 @@
             <li><a href="proxy.html">Google</a></li>
             <li><a href="tiktok.html">TikTok</a></li>
             <li><a href="SC.html">Snap</a></li>
-             <a href="apps.html"><i class="fa-solid fa-table-cells"></i></a>
+            <li><a href="apps.html"><i class="fa-solid fa-table-cells"></i></a></li>
             <li><a href="nowgg.html">Now.gg</a></li>
             <li><a href="forms.html"><i class="fa-solid fa-plus"></i> Add</a></li>
         </ul>
     </nav>
 
-    <div class="container">
-        <div class="image-item" data-label="crazygames">
-            <a href="CG.html">
-                <img src="https://raw.githubusercontent.com/brunysixlwork/BrunysIXLWork.github.io/refs/heads/main/storage/load/crazygames/IMG_5330.webp" alt="Crazy Games">
-                <div class="label">Crazy Games</div>
-            </a>
-        </div>
-    </div>
     <div class="container">
         <div class="image-item" data-label="Snapchat">
             <a href="SC.html">
@@ -157,8 +151,13 @@
                 <div class="label">Snapchat</div>
             </a>
         </div>
+        <div class="image-item" data-label="crazygames">
+            <a href="CG.html">
+                <img src="https://raw.githubusercontent.com/brunysixlwork/BrunysIXLWork.github.io/refs/heads/main/storage/load/crazygames/IMG_5330.webp" alt="Crazy Games">
+                <div class="label">Crazy Games</div>
+            </a>
+        </div>
     </div>
-
 
     <script>
         // Add event listener to toggle button
