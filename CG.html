@@ -27,8 +27,7 @@
 
         .site-nav {
             display: flex;
-            justify-content: space-between;
-            align-items: center;
+            align-items: center; /* Center items vertically */
             width: 100%; /* Ensure the nav takes full width */
         }
 
@@ -50,10 +49,11 @@
             display: flex;
             margin: 0;
             padding: 0;
+            margin-left: 20px; /* Space between logo and nav links */
         }
 
         .nav-links li {
-            margin-left: 20px;
+            margin-left: 20px; /* Space between each nav link */
         }
 
         .nav-links a {
@@ -112,7 +112,6 @@
             <div class="logo">
                 <img src="pyro-logo.png" alt="Logo"> Pyro Central
             </div>
-            <div class="toggle" onclick="document.querySelector('.site-nav').classList.toggle('active')">&#9776;</div>
             <ul class="nav-links">
                 <li><a href="proxy.html">Google</a></li>
                 <li><a href="tiktok.html">TikTok</a></li>
@@ -122,6 +121,7 @@
                 <li><a href="forms.html">Add</a></li>
                 <li><a href="#" id="fullscreenLink">Fullscreen</a></li>
             </ul>
+            <div class="toggle" onclick="document.querySelector('.site-nav').classList.toggle('active')">&#9776;</div>
         </nav>
     </header>
     <main class="site-main">
