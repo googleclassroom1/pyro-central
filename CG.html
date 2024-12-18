@@ -83,19 +83,6 @@
             padding: 80px 20px; /* Added padding to avoid overlap with navbar */
             text-align: center; 
         }
-        .fullscreen-btn {
-            margin-top: 10px;
-            background-color: #575757;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            cursor: pointer;
-            border-radius: 4px;
-            transition: background 0.3s;
-        }
-        .fullscreen-btn:hover {
-            background-color: #777;
-        }
     </style>
 </head>
 <body>
@@ -120,4 +107,13 @@
         <!-- Example iframe, replace with your actual content -->
         <iframe id="gameFrame" src="https://brunysixlwork.github.io/storage/load/crazygames/" width="781px" height="360px" style="border: none;"></iframe>
         <div>
-            <
+            <p>Enjoy the game! Click the button below to enter full screen.</p>
+            <button onclick="toggleFullScreen()" style="padding: 10px 20px;">Go Full Screen</button>
+        </div>
+    </div>
+
+    <script>
+        function toggleFullScreen() {
+            const iframe = document.getElementById('gameFrame');
+            if (iframe.request
+
