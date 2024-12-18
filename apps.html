@@ -16,7 +16,7 @@
 
         .navbar {
             display: flex;
-            justify-content: space-between;
+            justify-content: flex-start;  /* Changed to flex-start to align items to the left */
             align-items: center;
             background: #111;
             padding: 5px 20px;
@@ -32,6 +32,7 @@
             font-weight: bold;
             display: flex;
             align-items: center;
+            margin-right: 20px; /* Added margin to separate logo from links */
         }
 
         .logo img {
@@ -155,22 +156,21 @@
                 <div class="label">Crazy Games</div>
             </a>
         </div>
-        <div class="image-item" data-label="crazygames">
+        <div class="image-item" data-label="nowgg">
             <a href="nowgg.html">
                 <img src="https://raw.githubusercontent.com/brunysixlwork/BrunysIXLWork.github.io/refs/heads/main/storage/load/nowgg/IMG_5325.png" alt="Now.gg">
                 <div class="label">Now.gg</div>
             </a>
         </div>
-        <div class="image-item" data-label="Tiktok">
+        <div class="image-item" data-label="tiktok">
             <a href="tiktok.html">
-                <img src="https://raw.githubusercontent.com/brunysixlwork/BrunysIXLWork.github.io/refs/heads/main/storage/load/tiktok/IMG_5335.png" alt="Now.gg">
+                <img src="https://raw.githubusercontent.com/brunysixlwork/BrunysIXLWork.github.io/refs/heads/main/storage/load/tiktok/IMG_5335.png" alt="TikTok">
                 <div class="label">TikTok</div>
             </a>
         </div>
     </div>
 
     <script>
-        // https://raw.githubusercontent.com/brunysixlwork/BrunysIXLWork.github.io/refs/heads/main/storage/load/tiktok/IMG_5335.png
         document.querySelector('.toggle').addEventListener('click', function() {
             document.querySelector('.navbar').classList.toggle('active');
         });
