@@ -29,6 +29,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            width: 100%; /* Ensure the nav takes full width */
         }
 
         .logo {
@@ -102,17 +103,17 @@
             width: 90%; /* Set iframe width to 90% */
             height: 90vh; /* Set iframe height to 90% of the viewport height */
             border: none;
-            position: relative; /* Position relative for absolute positioning of the image */
         }
 
-        .fullscreen-image {
-            position: absolute; /* Position the image absolutely within the iframe */
-            bottom: 20px; /* Position it 20px from the bottom */
-            left: 10px; /* Move it 10px from the left (adjusted) */
-            cursor: pointer; /* Pointer cursor */
-            width: 50px; /* Set the width of the image */
-            height: auto; /* Maintain aspect ratio */
-            z-index: 1000; /* Ensure it stays on top of other content */
+        .fullscreen-button {
+            cursor: pointer;
+            background: rgba(255, 255, 255, 0.8);
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            color: black;
+            font-weight: bold;
+            margin-left: auto; /* Push the button to the far right */
         }
     </style>
 </head>
@@ -131,14 +132,28 @@
                 <li><a href="nowgg.html">Now.gg</a></li>
                 <li><a href="forms.html">Add</a></li>
             </ul>
+            <button class="fullscreen-button" id="fullscreenBtn">Fullscreen</button>
         </nav>
     </header>
     <main class="site-main">
         <iframe id="myIframe" src="https://brunysixlwork.github.io/storage/load/snapchat">
             Your browser does not support iframes.
         </iframe>
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT6si_0-dG6gUHmBRdtkxdXfZEhJpEkrE2EbQ&s" 
-             alt="Fullscreen" 
-             class="fullscreen-image" 
-             id="
+    </main>
 
+    <script>
+        const fullscreenBtn = document.getElementById('fullscreenBtn');
+        const myIframe = document.getElementById('myIframe');
+
+        fullscreenBtn.addEventListener('click', () => {
+            if (!document.fullscreenElement) {
+                myIframe.requestFullscreen().catch(err => {
+                    console.log(`Error attempting to enable full-screen mode: ${err.message} (${err.name})`);
+                });
+            } else {
+                document.exitFullscreen();
+            }
+        });
+    </script>
+</body>
+</html>
