@@ -93,18 +93,6 @@
         .toggle {
             display: none;
         }
-
-        .site-main {
-            padding: 20px;
-            text-align: center;
-            margin-top: 60px; /* Add margin to account for the fixed navbar */
-        }
-
-        iframe {
-            width: 90%; /* Set iframe width to 90% */
-            height: 90vh; /* Set iframe height to 90% of the viewport height */
-            border: none;
-        }
     </style>
 </head>
 <body>
@@ -115,33 +103,12 @@
             </div>
             <ul class="nav-links">
                 <li><a href="proxy.html">Google</a></li>
-            <li><a href="apps.html"><i class="fa-solid fa-table-cells"></i> Apps</a></li>
-            <li><a href="forms.html"><i class="fa-solid fa-plus"></i> Add</a></li>
+                <li><a href="apps.html"><i class="fa-solid fa-table-cells"></i> Apps</a></li>
+                <li><a href="forms.html"><i class="fa-solid fa-plus"></i> Add</a></li>
                 <li><a href="#" id="fullscreenLink">Fullscreen</a></li>
             </ul>
             <div class="toggle" onclick="document.querySelector('.site-nav').classList.toggle('active')">&#9776;</div>
         </nav>
     </header>
-    <main class="site-main">
-        <iframe id="myIframe" src="https://brunysixlwork.github.io/storage/load/crazygames">
-            Your browser does not support iframes.
-        </iframe>
-    </main>
-
-    <script>
-        const fullscreenLink = document.getElementById('fullscreenLink');
-        const myIframe = document.getElementById('myIframe');
-
-        fullscreenLink.addEventListener('click', (event) => {
-            event.preventDefault(); // Prevent the default anchor behavior
-            if (!document.fullscreenElement) {
-                myIframe.requestFullscreen().catch(err => {
-                    console.log(`Error attempting to enable full-screen mode: ${err.message} (${err.name})`);
-                });
-            } else {
-                document.exitFullscreen();
-            }
-        });
-    </script>
 </body>
 </html>
