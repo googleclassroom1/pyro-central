@@ -140,10 +140,10 @@
             border-radius: 5px; 
         }
 
-        /* Add extra margin for the last two items (apps) */
-        .image-item:last-child,
-        .image-item:nth-last-child(2) {
-            margin-top: 30px; /* Adjust as needed for spacing */
+        /* Add extra margin to all apps */
+        .image-item[data-label="10 Minutes Till Dawn"],
+        .image-item[data-label="xx142-b2exe"] {
+            margin-top: 30px; /* Adjust this value as needed */
         }
     </style>
 </head>
@@ -257,4 +257,3 @@
     </script>  
 </body>
 </html>
-
