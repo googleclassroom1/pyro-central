@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pyro Central</title>
-    <link rel="icon" href="pyro-logo.png" type="image/png">
+    <link rel="icon" type="image/x-icon" href="/storage/images/main/favicon.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         body {
             margin: 0;
@@ -14,9 +14,9 @@
             color: white;
         }
 
-        .site-header {
+        .navbar {
             display: flex;
-            justify-content: space-between;
+            justify-content: flex-start;  /* Changed to flex-start to align items to the left */
             align-items: center;
             background: #111;
             padding: 5px 20px;
@@ -26,18 +26,13 @@
             z-index: 1000;
         }
 
-        .site-nav {
-            display: flex;
-            align-items: center; /* Center items vertically */
-            width: 100%; /* Ensure the nav takes full width */
-        }
-
         .logo {
             color: white;
             font-size: 24px;
             font-weight: bold;
             display: flex;
             align-items: center;
+            margin-right: 20px; /* Added margin to separate logo from links */
         }
 
         .logo img {
@@ -50,11 +45,10 @@
             display: flex;
             margin: 0;
             padding: 0;
-            margin-left: 20px; /* Space between logo and nav links */
         }
 
         .nav-links li {
-            margin-left: 20px; /* Space between each nav link */
+            margin-left: 20px;
         }
 
         .nav-links a {
@@ -79,9 +73,11 @@
                 left: 0;
                 background: #111;
             }
-            .site-nav.active .nav-links {
+
+            .navbar.active .nav-links {
                 display: flex;
             }
+
             .toggle {
                 display: block;
                 cursor: pointer;
@@ -93,22 +89,75 @@
         .toggle {
             display: none;
         }
+
+        .container {
+            display: flex; /* Use flexbox for layout */
+            justify-content: center; /* Center the items */
+            padding: 20px;
+            margin-top: 70px; /* To avoid the navbar overlapping content */
+        }
+
+        .image-item {
+            position: relative;
+            cursor: pointer;
+            text-align: center;
+            width: 80%; /* Set width to 80% to make icons smaller */
+            max-width: 150px; /* Optional: Limit max width */
+            margin: 0 10px; /* Margin between icons */
+        }
+
+        .image-item img {
+            width: 100%;
+            border-radius: 10px;
+            transition: transform 0.3s;
+        }
+
+        .image-item:hover img {
+            transform: scale(1.05);
+        }
+
+        .label {
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0, 0, 0, 0.6);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
     </style>
 </head>
 <body>
-    <header class="site-header">
-        <nav class="site-nav">
-            <div class="logo">
-                <img src="pyro-logo.png" alt="Logo"> Pyro Central
-            </div>
-            <ul class="nav-links">
-                <li><a href="index.html"><i class="fa-solid fa-house"></i></a></li>
-                 <li><a href="games.html"><i class="fa-solid fa-gamepad"></i></a></li>
-                <li><a href="apps.html"><i class="fa-solid fa-table-cells"></i></a></li>
-                <li><a href="forms.html"><i class="fa-solid fa-plus"></i></a></li>
-            </ul>
-        </nav>
-    </header>
-</body>
-</html>
 
+    <nav class="navbar">
+        <div class="logo">
+            <img src="pyro-logo.png" alt="Logo"> Pyro Central
+        </div>
+        <div class="toggle" onclick="document.querySelector('.navbar').classList.toggle('active')">&#9776;</div>
+        <ul class="nav-links">
+            <li><a href="index.html"><i class="fa-solid fa-house"></i></a></li>
+            <li><a href="games.html"><i class="fa-solid fa-gamepad"></i></a></li>
+            <li><a href="apps.html"><i class="fa-solid fa-table-cells"></i></a></li>
+            <li><a href="forms.html"><i class="fa-solid fa-plus"></i></a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <div class="image-item" data-label="Slope">
+    <a href="/storage/load/slope/game/">
+        <img src="crazygames.jpeg" alt="Slope">
+        <div class="label">Slope</div>
+    </a>
+</div>
+
+        
+    </div>
+
+    <script>
+        document.querySelector('.toggle').addEventListener('click', function() {
+            document.querySelector('.navbar').classList.toggle('active');
+        });
+    </script>
+</body>
+</html> 
