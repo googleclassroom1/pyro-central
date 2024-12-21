@@ -141,9 +141,8 @@
         }
 
         /* Add extra margin to all apps */
-        .image-item[data-label="10 Minutes Till Dawn"],
-        .image-item[data-label="xx142-b2exe"] {
-            margin-top: 30px; /* Adjust this value as needed */
+        .app-item {
+            margin-top: 30px; /* Adjust this value for desired spacing */
         }
     </style>
 </head>
@@ -162,7 +161,7 @@
         </ul>
     </nav>
 
-    <!-- Container with all games -->
+    <!-- Container with all games and apps -->
     <div class="container">
         <div class="image-item" data-label="Slope">
           <a href="/g/slope/index.html">
@@ -213,20 +212,21 @@
           </a>
         </div>
 
-        <div class="image-item" data-label="xx142-b2exe"> 
+        <div class="image-item app-item" data-label="xx142-b2exe"> 
             <a href="/g/xx142-b2exe/index.html"> 
                 <img src="storage/load/xx142-b2exe/virus.jpg" alt="xx142-b2exe"> 
                 <div class="label">xx142-b2exe</div> 
             </a> 
         </div> 
 
-        <div class="image-item" data-label="10 Minutes Till Dawn"> 
+        <div class="image-item app-item" data-label="10 Minutes Till Dawn"> 
             <a href="/g/10tilldawn/index.html"> 
                 <img src="storage/load/10tilldawn/10tilldawn.png" alt="10 Minutes Till Dawn"> 
                 <div class="label">10 Minutes Till Dawn</div> 
             </a> 
         </div> 
-        <div class="image-item" data-label="ADOFAI"> 
+
+        <div class="image-item app-item" data-label="ADOFAI"> 
             <a href="/g/ADOFAI/index.html"> 
                 <img src="storage/load/ADOFAI/ADOFAI.png" alt="ADOFAI"> 
                 <div class="label">ADOFAI</div> 
@@ -256,7 +256,7 @@
           },
           // Retina detection settings...
       });
-      
+
       document.querySelector('.toggle').addEventListener('click', function() {
           document.querySelector('.navbar').classList.toggle('active');
       });
