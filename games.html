@@ -102,11 +102,12 @@
         }
 
         .container {
-            display: flex;
-            flex-wrap: wrap; /* Allow items to wrap */
-            justify-content: center; 
+            display: flex;             /* Use flexbox for a horizontal layout */
+            justify-content: center;   /* Center the items */
             padding: 20px;
             margin-top: 70px; 
+            flex-wrap: nowrap;         /* Prevent the items from wrapping to the next line */
+            overflow-x: auto;         /* Allow horizontal scrolling if needed */
         }
 
         .image-item {
@@ -149,7 +150,7 @@
         <div class="logo">
             <img src="pyro-logo.png" alt="Logo"> Pyro Central
         </div>
-        <div class="toggle" onclick="document.querySelector('.navbar').classList.toggle('active')">&#9776;</div>
+        <div class="toggle" onclick="document.querySelector('.navbar').classList.toggle('active')">☰</div>
         <ul class="nav-links">
             <li><a href="index.html"><i class="fa-solid fa-house"></i></a></li>
             <li><a href="games.html"><i class="fa-solid fa-gamepad"></i></a></li>
@@ -158,7 +159,7 @@
         </ul>
     </nav>
 
-    <!-- First row of games -->
+    <!-- Container with all games -->
     <div class="container">
         <div class="image-item" data-label="Slope">
             <a href="/g/slope/index.html">
@@ -208,10 +209,6 @@
                 <div class="label">xx142-b2exe</div>
             </a>
         </div>
-    </div>
-    
-    <!-- Second row with "10 Minutes Till Dawn" -->
-    <div class="container">
         <div class="image-item" data-label="10 Minutes Till Dawn">
             <a href="/g/10tilldawn/index.html">
                 <img src="storage/load/10tilldawn/10tilldawn.png" alt="10 Minutes Till Dawn">
