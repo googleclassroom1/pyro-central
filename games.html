@@ -103,6 +103,7 @@
 
         .container {
             display: flex;
+            flex-wrap: wrap; /* Allow items to wrap */
             justify-content: center; 
             padding: 20px;
             margin-top: 70px; 
@@ -114,7 +115,7 @@
             text-align: center;
             width: 80%; 
             max-width: 150px; 
-            margin: 0 10px; 
+            margin: 10px; /* Add margin for spacing */
         }
 
         .image-item img {
@@ -158,6 +159,7 @@
     </nav>
 
     <div class="container">
+        <!-- First row of games -->
         <div class="image-item" data-label="Slope">
             <a href="/g/slope/index.html">
                 <img src="storage/load/slope/slope.webp" alt="Slope">
@@ -207,6 +209,10 @@
                 <div class="label">xx142-b2exe</div>
             </a>
         </div>
+    </div>
+
+    <!-- Second row with "10 Minutes Till Dawn" -->
+    <div class="container">
         <div class="image-item" data-label="10 Minutes Till Dawn">
             <a href="/g/10tilldawn/index.html">
                 <img src="storage/load/10tilldawn/10tilldawn.png" alt="10 Minutes Till Dawn">
