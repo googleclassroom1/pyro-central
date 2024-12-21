@@ -108,8 +108,8 @@
             height: 100vh;
             display: flex;
             justify-content: center;
-            align-items: center;
-            margin-top: 22.5vh; /* Adjust based on the navbar height */
+            align-items: flex-start; /* Align items at the start (top) */
+            margin-top: 15vh; /* Move it slightly down from the top */
         }
     </style>
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
@@ -120,7 +120,7 @@
         <div class="logo">
             <img src="pyro-logo.png" alt="Logo"> Pyro Central
         </div>
-        <div class="toggle" onclick="document.querySelector('.navbar').classList.toggle('active')">&#9776;</div>
+        <div class="toggle" onclick="document.querySelector('.navbar').classList.toggle('active')">☰</div>
         <ul class="nav-links">
             <li><a href="index.html"><i class="fa-solid fa-house"></i></a></li>
             <li><a href="games.html"><i class="fa-solid fa-gamepad"></i></a></li>
@@ -253,4 +253,3 @@
     </script>
 </body>
 </html>
-
