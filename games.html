@@ -13,7 +13,7 @@
             font-family: Arial, sans-serif;
             background: black;
             color: white;
-            overflow: hidden; /* Prevent scrolling */
+            overflow: hidden;
         }
         #particles-js {
             position: absolute;
@@ -21,7 +21,7 @@
             height: 100%;
             top: 0;
             left: 0;
-            z-index: -1; /* Keep particles behind other content */
+            z-index: -1;
         }
         .navbar {
             display: flex;
@@ -67,179 +67,170 @@
         }
         @media (max-width: 768px) {
             .nav-links {
-                flex-direction: column; 
-                display: none; 
-                width: 100%; 
-                position: absolute; 
-                top: 60px; 
-                left: 0; 
-                background: #111; 
+                flex-direction: column;
+                display: none;
+                width: 100%;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                background: #111;
             }
             .navbar.active .nav-links {
-                display: flex; 
+                display: flex;
             }
             .toggle {
-                display: block; 
-                cursor: pointer; 
-                color: white; 
-                font-size: 24px; 
+                display: block;
+                cursor: pointer;
+                color: white;
+                font-size: 24px;
             }
         }
         .toggle {
-            display:none; /* Hide toggle button by default */
+            display: none; /* Hide toggle button by default */
         }
         .container {
-           display:flex; /* Use flexbox for a horizontal layout */
-           justify-content:center; /* Center the items */
-           padding:20px; 
-           margin-top:70px; 
-           flex-wrap:flex-wrap; /* Allow items to wrap to the next line */
-           overflow-x:auto; /* Allow horizontal scrolling if needed */
+            display: flex; /* Use flexbox for a horizontal layout */
+            justify-content: center; /* Center the items */
+            padding: 20px; 
+            margin-top: 70px; 
+            flex-wrap: wrap; /* Allow items to wrap to the next line */
+            overflow-x: auto; /* Allow horizontal scrolling if needed */
+        }
+        .image-item {
+            position: relative; 
+            cursor: pointer; 
+            text-align: center; 
+            width: 80%; 
+            max-width: 150px; 
+            margin: 0 10px; 
+        }
+        .image-item img {
+            width: 100%; 
+            border-radius: 10px; 
+            transition: transform 0.3s; 
+        }
+        .image-item:hover img {
+           transform: scale(1.05); 
        }
-       .image-item {
-           position:absolute; 
-           cursor:pointer; 
-           text-align:center; 
-           width:80%; 
-           max-width:150px; 
-           margin:.5em; 
-       }
-
-       /* Add margin to every second row item */
-       .image-item:nth-child(n+6) { /* Assuming there are five items in the first row */
-           margin-top:20px; /* Adjust this value as needed for spacing */
-       }
-
-       .image-item img {
-           width:"100%"; 
-           border-radius:"10px"; 
-           transition:"transform" "0.3s"; 
-       }
-
-       .image-item:hover img {
-           transform:"scale(1.05)";
-       }
-
        .label {
-           position:absolute; 
-           bottom:"10px"; 
-           left:"50%"; 
-           transform:"translateX(-50%)"; 
-           background:"rgba(0, 0, 0, 0.6)"; 
-           color:white; 
-           padding:"5px" "10px"; 
-           border-radius:"5px"; 
+           position: absolute; 
+           bottom: 10px; 
+           left: 50%; 
+           transform: translateX(-50%); 
+           background: rgba(0, 0, 0, 0.6); 
+           color: white; 
+           padding: 5px 10px; 
+           border-radius: 5px; 
        }
-   </style>
+    </style>
 </head>
 <body>
-   <div id="particles-js"></div>
-   <nav class="navbar">
-       <div class="logo">
+    <div id="particles-js"></div>
+    <nav class="navbar">
+        <div class="logo">
           <img src="pyro-logo.png" alt="Logo"> Pyro Central
-       </div>
-       <div class="toggle" onclick="document.querySelector('.navbar').classList.toggle('active')">☰</div>
-       <ul class="nav-links">
+        </div>
+        <div class="toggle" onclick="document.querySelector('.navbar').classList.toggle('active')">☰</div>
+        <ul class="nav-links">
           <li><a href="index.html"><i class="fa-solid fa-house"></i></a></li>
           <li><a href="games.html"><i class="fa-solid fa-gamepad"></i></a></li>
           <li><a href="apps.html"><i class="fa-solid fa-table-cells"></i></a></li>
           <li><a href="forms.html"><i class="fa-solid fa-plus"></i></a></li>
-       </ul>
-   </nav>
+        </ul>
+    </nav>
 
-   <!-- Container with all games -->
-   <div class="container">
-      <div class="image-item" data-label="Slope"> 
-          <a href="/g/slope/index.html"> 
-              <img src="storage/load/slope/slope.webp" alt="Slope"> 
-              <div class="label">Slope</div> 
-          </a> 
-      </div> 
+    <!-- Container with all games -->
+    <div class="container">
+        <div class="image-item" data-label="Slope">
+          <a href="/g/slope/index.html">
+              <img src="storage/load/slope/slope.webp" alt="Slope">
+              <div class="label">Slope</div>
+          </a>
+        </div>
+        
+        <div class="image-item" data-label="Polytrack">
+          <a href="/g/polytrack/index.html">
+              <img src="storage/load/polytrack/polytrack-min.jpg" alt="Polytrack">
+              <div class="label">Polytrack</div>
+          </a>
+        </div>
 
-      <div class="image-item" data-label="Polytrack"> 
-          <a href="/g/polytrack/index.html"> 
-              <img src="storage/load/polytrack/polytrack-min.jpg" alt="Polytrack"> 
-              <div class="label">Polytrack</div> 
-          </a> 
-      </div> 
+        <div class="image-item" data-label="Basket Random">
+          <a href="/g/basketrandom/index.html">
+              <img src="storage/load/basketrandom/basketrandom.png" alt="Basket Random">
+              <div class="label">Basket Random</div>
+          </a>
+        </div>
 
-      <div class="image-item" data-label="Basket Random"> 
-          <a href="/g/basketrandom/index.html"> 
-              <img src="storage/load/basketrandom/basketrandom.png" alt="Basket Random"> 
-              <div class="label">Basket Random</div> 
-          </a> 
-      </div> 
+        <div class="image-item" data-label="Soccer Random">
+          <a href="/g/soccerrandom/index.html">
+              <img src="storage/load/soccerrandom/soccerrandom.png" alt="Soccer Random">
+              <div class="label">Soccer Random</div>
+          </a>
+        </div>
 
-      <div class="image-item" data-label="Soccer Random"> 
-          <a href="/g/soccerrandom/index.html"> 
-              <img src="storage/load/soccerrandom/soccerrandom.png" alt="Soccer Random"> 
-              <div class="label">Soccer Random</div> 
-          </a> 
-      </div> 
+        <div class="image-item" data-label="Volley Random">
+          <a href="/g/volleyrandom/index.html">
+              <img src="storage/load/volleyrandom/volleyrandom.png" alt="Volley Random">
+              <div class="label">Volley Random</div>
+          </a>
+        </div>
 
-      <div class="image-item" data-label="Volley Random">  
-          <a href="/g/volleyrandom/index.html">  
-              <img src="/storage/load/volleyrandom/volleyrandom.png" alt= "Volley Random">  
-              <div class= "label">Volley Random</ div >  
-          </ a >  
-      </ div >
+        <div class="image-item" data-label="Boxing Random">
+          <a href="/g/boxingrandom/index.html">
+              <img src="storage/load/boxingrandom/boxingrandom.png" alt="Boxing Random">
+              <div class="label">Boxing Random</div>
+          </a>
+        </div>
 
-      <!-- Second Row Items -->
-      <div class= "image-item" data-label= "Boxing Random">  
-          <a href= "/g/boxingrandom/index.html">  
-              <img src= "storage/load/boxingrandom/boxingrandom.png" alt= "Boxing Random">  
-              <div class= "label">Boxing Random</ div >  
-          </ a >  
-      </ div >
+        <div class="image-item" data-label="2048">
+          <a href="/g/2048/index.html">
+              <img src="storage/load/2048/2048.png" alt="2048">
+              <div class="label">2048</div>
+          </a>
+      </div>
 
       <!-- Add more games or apps as needed -->
-      < div class = "image-item" data-label = "2048">  
-          <a href= "/g/2048/index.html">  
-              <img src= "storage/load/2048/2048.png" alt= "2048">  
-              <div class= "label">2048</ div >  
-          </ a >  
-      </ div >
+      <div class="image-item" data-label="xx142-b2exe"> 
+          <a href="/g/xx142-b2exe/index.html"> 
+              <img src="storage/load/xx142-b2exe/virus.jpg" alt="xx142-b2exe"> 
+              <div class="label">xx142-b2exe</div> 
+          </a> 
+      </div> 
 
       <!-- Include "10 Minutes Till Dawn" -->
-      < div class = "image-item" data-label = "xx142-b2exe">
-          < a href = "/g/xx142-b2exe/index.html">
-              < img src = "storage/load/xx142-b2exe/virus.jpg" alt = "xx142-b2exe">
-              < div class = "label">xx142-b2exe</ div >
-          </ a >
-      </ div >
+      <div class="image-item" data-label="10 Minutes Till Dawn"> 
+          <a href="/g/10tilldawn/index.html"> 
+              <img src="storage/load/10tilldawn/10tilldawn.png" alt="10 Minutes Till Dawn"> 
+              <div class="label">10 Minutes Till Dawn</div> 
+          </a> 
+      </div> 
 
-      <!-- Include "10 Minutes Till Dawn" -->
-      < div class = "image-item" data-label = "10 Minutes Till Dawn">
-          < a href = "/g/10tilldawn/index.html">
-              < img src = "storage/load/10tilldawn/10tilldawn.png" alt = "10 Minutes Till Dawn">
-              < div class = "label">10 Minutes Till Dawn</ div >
-          </ a >
-      </ div >
+      <!-- Add more apps or games here -->
+    </div>
 
-   </ div>
-
-   <!-- Initialize particles.js -->
-   <script>
-       particlesJS('particles-js', { // Initialize particles.js
-           "particles": { // Particle settings
-               "number": { // Number of particles
-                   "value": 100,
-                   "density": { // Density settings
-                       "enable": true,
-                       "value_area": 800
-                   }
-               },
-               "color": { // Particle color
-                   "value": "#ffffff"
-               },
-               // Other particle settings...
-           },
-           // Interactivity settings...
-       });
-       
-       document.querySelector('.toggle').addEventListener('click', function() { // Navbar toggle functionality
-           document.querySelector('.navbar').classList.toggle('active');
-       });
-   </script>
+    <!-- Initialize particles.js -->
+    <script>
+      particlesJS('particles-js', {
+          "particles": {
+              "number": { "value": 100, "density": { "enable": true, "value_area": 800 } },
+              "color": { "value": "#ffffff" },
+              "shape": { "type": "circle", "stroke": { "width": 0, "color": "#000000" }, "polygon": { "nb_sides": 5 }, "image": { "src": "img/github.svg", "width": 100, "height": 100 } },
+              "opacity": { "value": 0.5, "random": false, "anim": { "enable": false, "speed": 1, "opacity_min": 0.1, "sync": false } },
+              "size": { "value": 3, "random": true, "anim": { "enable": false, "speed": 40, "size_min": 0.1, "sync": false } },
+              "line_linked": { "enable": true, "distance": 150, "color": "#ffffff", "opacity": 0.4, "width": 1 },
+              "move": { "enable": true, "speed": 6, "direction": "none", "random": false, "straight": false, "out_mode": "out", "attract": { "enable": false, "rotateX": 600, "rotateY": 1200 } }
+          },
+          "interactivity": {
+              // Interactivity settings...
+          },
+          // Retina detection settings...
+      });
+      
+      document.querySelector('.toggle').addEventListener('click', function() {
+          document.querySelector('.navbar').classList.toggle('active');
+      });
+    </script>  
 </body>
 </html>
+
