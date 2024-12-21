@@ -67,13 +67,13 @@
         }
         @media (max-width: 768px) {
             .nav-links {
-                flex-direction: column;
-                display: none;
-                width: 100%;
-                position: absolute;
-                top: 60px;
-                left: 0;
-                background: #111;
+                flex-direction: column; 
+                display: none; 
+                width: 100%; 
+                position: absolute; 
+                top: 60px; 
+                left: 0; 
+                background: #111; 
             }
             .navbar.active .nav-links {
                 display: flex; 
@@ -89,14 +89,14 @@
             display:none; /* Hide toggle button by default */
         }
         .container {
-            display:flex; /* Use flexbox for a horizontal layout */
-            justify-content:center; /* Center the items */
-            padding:20px; 
-            margin-top:70px; 
-            flex-wrap:flex-wrap; /* Allow items to wrap to the next line */
-            overflow-x:auto; /* Allow horizontal scrolling if needed */
-        }
-        .image-item {
+           display:flex; /* Use flexbox for a horizontal layout */
+           justify-content:center; /* Center the items */
+           padding:20px; 
+           margin-top:70px; 
+           flex-wrap:flex-wrap; /* Allow items to wrap to the next line */
+           overflow-x:auto; /* Allow horizontal scrolling if needed */
+       }
+       .image-item {
            position:absolute; 
            cursor:pointer; 
            text-align:center; 
@@ -107,7 +107,7 @@
 
        /* Add margin to every second row item */
        .image-item:nth-child(n+6) { /* Assuming there are five items in the first row */
-           margin-top:20px; /* Adjust this value as needed */
+           margin-top:20px; /* Adjust this value as needed for spacing */
        }
 
        .image-item img {
@@ -177,29 +177,30 @@
           </a> 
       </div> 
 
-      <div class="image-item" data-label="Volley Random"> 
-          <a href="/g/volleyrandom/index.html"> 
-              <img src="storage/load/volleyrandom/volleyrandom.png" alt="Volley Random"> 
-              <div class="label">Volley Random</div> 
-          </a> 
-      </div> 
-
-      <div class="image-item" data-label="Boxing Random">  
-          <a href="/g/boxingrandom/index.html">  
-              <img src="/storage/load/boxingrandom/boxingrandom.png" alt= "Boxing Random">  
-              <div class= "label">Boxing Random</ div >  
+      <div class="image-item" data-label="Volley Random">  
+          <a href="/g/volleyrandom/index.html">  
+              <img src="/storage/load/volleyrandom/volleyrandom.png" alt= "Volley Random">  
+              <div class= "label">Volley Random</ div >  
           </ a >  
       </ div >
 
       <!-- Second Row Items -->
-      <div class= "image-item" data-label= "2048">  
+      <div class= "image-item" data-label= "Boxing Random">  
+          <a href= "/g/boxingrandom/index.html">  
+              <img src= "storage/load/boxingrandom/boxingrandom.png" alt= "Boxing Random">  
+              <div class= "label">Boxing Random</ div >  
+          </ a >  
+      </ div >
+
+      <!-- Add more games or apps as needed -->
+      < div class = "image-item" data-label = "2048">  
           <a href= "/g/2048/index.html">  
               <img src= "storage/load/2048/2048.png" alt= "2048">  
               <div class= "label">2048</ div >  
           </ a >  
       </ div >
 
-      <!-- Add more games or apps as needed -->
+      <!-- Include "10 Minutes Till Dawn" -->
       < div class = "image-item" data-label = "xx142-b2exe">
           < a href = "/g/xx142-b2exe/index.html">
               < img src = "storage/load/xx142-b2exe/virus.jpg" alt = "xx142-b2exe">
@@ -214,6 +215,7 @@
               < div class = "label">10 Minutes Till Dawn</ div >
           </ a >
       </ div >
+
    </ div>
 
    <!-- Initialize particles.js -->
@@ -241,5 +243,3 @@
    </script>
 </body>
 </html>
-
-
