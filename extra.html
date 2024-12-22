@@ -111,6 +111,20 @@
             align-items: flex-start; /* Aligns items at the start (top) */
             margin-top: 35vh; /* Adjust this value to move it further down */
         }
+
+        .more-links {
+            text-align: center; /* Center the title */
+            margin-top: 20px; /* Add some space above the list */
+        }
+
+        .more-links ul {
+            list-style-type: disc; /* Bulleted list */
+            padding-left: 0; /* Remove default padding */
+        }
+
+        .more-links li {
+            margin: 5px 0; /* Spacing between items */
+        }
     </style>
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 </head>
@@ -126,11 +140,18 @@
             <li><a href="games.html"><i class="fa-solid fa-gamepad"></i></a></li>
             <li><a href="apps.html"><i class="fa-solid fa-table-cells"></i></a></li>
             <li><a href="forms.html"><i class="fa-solid fa-plus"></i></a></li>
-          <li><a href="extra.html"><i class="fa-solid fa-paper-plane"></i></a></li>
         </ul>
     </nav>
     <div class="content">
-        <!-- Removed welcome text -->
+        <div class="more-links">
+            <h2>More Links</h2>
+            <ul>
+                <li><a href="link1.html" style="color: white;">Link 1</a></li>
+                <li><a href="link2.html" style="color: white;">Link 2</a></li>
+                <li><a href="link3.html" style="color: white;">Link 3</a></li>
+                <li><a href="link4.html" style="color: white;">Link 4</a></li>
+            </ul>
+        </div>
     </div>
     <script>
         // Initialize particles.js
