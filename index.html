@@ -38,19 +38,6 @@
         <h1>Welcome to Pyro Central</h1>
         <p>My website for restricted Chromebook users</p>
     </div>
-    <div id="footer"><span id="time"></span></div>
 
-    <script>
-        particlesJS('particles-js', {
-            "particles": { "number": { "value": 100 }, "color": { "value": "#ffffff" }, "shape": { "type": "circle" }, "size": { "value": 3, "random": true }, "line_linked": { "enable": true }, "move": { "enable": true } },
-            "interactivity": { "events": { "onhover": { "enable": false } } },
-            "retina_detect": true
-        });
-        function updateTime() {
-            const now = new Date();
-            document.getElementById('time').textContent = now.toLocaleTimeString('en-GB', { hour12: false });
-        }
-        setInterval(updateTime, 1000);
-    </script>
 </body>
 </html>
