@@ -252,5 +252,19 @@
             document.querySelector('.navbar').classList.toggle('active');
         });
     </script>
+    <span id="time"></span>
+
+<script>
+function updateTime() {
+    const now = new Date();
+    const options = { hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: false };
+    document.getElementById('time').textContent = now.toLocaleTimeString([], options);
+}
+
+// Update the time immediately and then every second
+updateTime();
+setInterval(updateTime, 1000);
+</script>
+
 </body>
 </html>
