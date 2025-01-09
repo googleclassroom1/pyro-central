@@ -6,25 +6,120 @@
     <title>Pyro Central</title>
     <link rel="icon" href="pyro-logo.png" type="image/png">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-        body { margin: 0; font-family: Arial; background: black; color: white; overflow: hidden; }
-        #particles-js { position: absolute; width: 100%; height: 100%; top: 0; left: 0; z-index: -1; }
-        .navbar { display: flex; justify-content: flex-start; align-items: center; background: rgba(17, 17, 17, 0.8); padding: 5px 20px; position: fixed; top: 0; width: 100%; z-index: 1000; }
-        .logo { color: white; font-size: 24px; display: flex; align-items: center; margin-right: 20px; }
-        .nav-links { list-style: none; display: flex; margin: 0; padding: 0; }
-        .nav-links li { margin-left: 20px; }
-        .nav-links a { color: white; text-decoration: none; padding: 8px 16px; }
-        .nav-links a:hover { background: #575757; border-radius: 4px; }
-        .content { padding: 20px; text-align: center; height: 100vh; display: flex; flex-direction: column; justify-content: center; }
-        #footer { text-align: center; padding: 10px; position: relative; bottom: 0; width: 100%; }
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: black;
+            color: white;
+            overflow: hidden; /* Hide overflow for particle effect */
+        }
+
+        #particles-js {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: -1; /* Position behind everything else */
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: flex-start; /* Move links to the left */
+            align-items: center;
+            background: rgba(17, 17, 17, 0.8); /* Slightly transparent background */
+            padding: 5px 20px;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        .logo {
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            margin-right: 20px; /* Add some margin to the right of the logo */
+        }
+
+        .logo img {
+            width: 40px;
+            margin-right: 10px;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-links li {
+            margin-left: 20px; /* Spacing between links */
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            padding: 8px 16px;
+            transition: background 0.3s;
+        }
+
+        .nav-links a:hover {
+            background: #575757;
+            border-radius: 4px;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                flex-direction: column;
+                display: none;
+                width: 100%;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                background: #111;
+            }
+
+            .navbar.active .nav-links {
+                display: flex;
+            }
+
+            .toggle {
+                display: block;
+                cursor: pointer;
+                color: white;
+                font-size: 24px;
+            }
+        }
+
+        .toggle {
+            display: none; /* Keep toggle button hidden on larger screens */
+        }
+
+        .content {
+            padding: 20px;
+            text-align: center;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start; /* Aligns items at the start (top) */
+            margin-top: 35vh; /* Adjust this value to move it further down */
+        }
     </style>
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 </head>
 <body>
-    <div id="particles-js"></div>
+    <div id="particles-js"></div> <!-- Particle effect container -->
     <nav class="navbar">
-        <div class="logo"><img src="pyro-logo.png" alt="Logo"> Pyro Central</div>
+        <div class="logo">
+            <img src="pyro-logo.png" alt="Logo"> Pyro Central
+        </div>
         <div class="toggle" onclick="document.querySelector('.navbar').classList.toggle('active')">☰</div>
         <ul class="nav-links">
             <li><a href="index.html"><i class="fa-solid fa-house"></i></a></li>
@@ -35,9 +130,130 @@
         </ul>
     </nav>
     <div class="content">
-        <h1>Welcome to Pyro Central</h1>
-        <p>My website for restricted Chromebook users</p>
+        <div class="welcome-text">
+            <h1>Welcome to Pyro Central</h1>
+            <p>my website for restricted chromebook users</p>
+        </div>
     </div>
+    <script>
+        // Initialize particles.js
+        particlesJS('particles-js', {
+            "particles": {
+                "number": {
+                    "value": 100,  // Number of particles
+                    "density": {
+                        "enable": true,
+                        "value_area": 800
+                    }
+                },
+                "color": {
+                    "value": "#ffffff" // Color of particles
+                },
+                "shape": {
+                    "type": "circle", // Shapes: "circle", "edge", "triangle", "polygon", "star", "image"
+                    "stroke": {
+                        "width": 0,
+                        "color": "#000000"
+                    },
+                    "polygon": {
+                        "nb_sides": 5
+                    },
+                    "image": {
+                        "src": "img/github.svg",
+                        "width": 100,
+                        "height": 100
+                    }
+                },
+                "opacity": {
+                    "value": 0.5,
+                    "random": false,
+                    "anim": {
+                        "enable": false,
+                        "speed": 1,
+                        "opacity_min": 0.1,
+                        "sync": false
+                    }
+                },
+                "size": {
+                    "value": 3,
+                    "random": true,
+                    "anim": {
+                        "enable": false,
+                        "speed": 40,
+                        "size_min": 0.1,
+                        "sync": false
+                    }
+                },
+                "line_linked": {
+                    "enable": true,
+                    "distance": 150,
+                    "color": "#ffffff",
+                    "opacity": 0.4,
+                    "width": 1
+                },
+                "move": {
+                    "enable": true,
+                    "speed": 6,
+                    "direction": "none",
+                    "random": false,
+                    "straight": false,
+                    "out_mode": "out",
+                    "attract": {
+                        "enable": false,
+                        "rotateX": 600,
+                        "rotateY": 1200
+                    }
+                }
+            },
+            "interactivity": {
+                "detect_on": "canvas",
+                "events": {
+                    "onhover": {
+                        "enable": false,
+                        "mode": "repulse"
+                    },
+                    "onclick": {
+                        "enable": false,
+                        "mode": "push"
+                    },
+                    "resize": true
+                },
+                "modes": {
+                    "grab": {
+                        "distance": 400,
+                        "line_linked": {
+                            "opacity": 1
+                        }
+                    },
+                    "bubble": {
+                        "distance": 400,
+                        "size": 40,
+                        "duration": 2,
+                        "opacity": 8,
+                        "speed": 3
+                    },
+                    "repulse": {
+                        "distance": 200,
+                        "duration": 0.4
+                    },
+                    "push": {
+                        "particles_nb": 4
+                    },
+                    "remove": {
+                        "particles_nb": 2
+                    }
+                }
+            },
+            "retina_detect": true
+        });
+
+        // Add event listener to toggle button
+        document.querySelector('.toggle').addEventListener('click', function() {
+            document.querySelector('.navbar').classList.toggle('active');
+        });
+    </script>
+  
+
 
 </body>
 </html>
