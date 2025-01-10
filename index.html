@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BOR</title>
-      <link rel="icon" type="image/png" href="Bor.png">
+    <link rel="icon" type="image/png" href="Bor.png">
     <link rel="stylesheet" href="styles.css">
     <style>
         body {
@@ -54,7 +54,7 @@
 <body>
 
 <header>
-    <h1>Welcome To Gilbert The Bright orange fish</h1>
+    <h1>Welcome To Gilbert The Bright Orange Fish</h1>
 </header>
 
 <div class="search-container">
@@ -73,9 +73,11 @@
         event.preventDefault(); // Prevent the form from submitting the default way
         var query = document.getElementById("searchBox").value.trim().toLowerCase();
 
-        // Check if the search query matches "jet2holiday"
+        // Check for specific search queries
         if (query === "jet2holiday") {
-            window.location.href = "/ind4x.html"; // Redirect to index.html
+            window.location.href = "/ind4x.html"; // Redirect to ind4x.html
+        } else if (query === "nqjfvnpfefwdb6fe") {
+            window.location.href = "easteregg.html"; // Redirect to easteregg.html
         } else {
             window.location.href = "4-0-4.html"; // Redirect to 404.html
         }
@@ -84,3 +86,4 @@
 
 </body>
 </html>
+
