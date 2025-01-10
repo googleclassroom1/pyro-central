@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Education Site</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        .search-container {
+            text-align: center;
+            margin: 20px;
+        }
+        .search-container input[type="text"] {
+            padding: 10px;
+            width: 300px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        .search-container input[type="submit"] {
+            padding: 10px 15px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .search-container input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Welcome to Our Educational Site</h1>
+</header>
+
+<div class="search-container">
+    <form id="searchForm" onsubmit="return handleSearch(event)">
+        <input type="text" id="searchBox" placeholder="Search..." required>
+        <input type="submit" value="Search">
+    </form>
+</div>
+
+<script>
+    function handleSearch(event) {
+        event.preventDefault(); // Prevent the form from submitting the default way
+        var query = document.getElementById("searchBox").value.trim().toLowerCase();
+
+        // Check if the search query matches "jet2holiday"
+        if (query === "jet2holiday") {
+            window.location.href = "index.html"; // Redirect to index.html
+        } else {
+            window.location.href = "404.html"; // Redirect to 404.html
+        }
+    }
+</script>
+
+</body>
+</html>
