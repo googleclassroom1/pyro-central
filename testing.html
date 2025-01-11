@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Full Screen WidgetBot</title>
+    <title>Chatwoot Embed</title>
     <style>
         html, body {
             margin: 0;
@@ -12,45 +12,28 @@
             overflow: hidden; /* Prevent scrolling */
             background-color: #f0f0f0; /* Optional: Set a background color */
         }
-        .widget-container {
-            width: 100%;
-            height: 100%;
-            position: relative; /* Ensure proper positioning */
-        }
-        .loading {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            font-size: 24px;
-            color: #333; /* Loading text color */
-        }
     </style>
 </head>
 <body>
-    <div class="widget-container">
-        <div class="loading">Loading WidgetBot...</div>
-        <iframe src="https://e.widgetbot.io/channels/1327413370223333479/1327414346325950536" 
-                allow="clipboard-write; fullscreen" 
-                height="100%" 
-                width="100%" 
-                style="border: none;"></iframe>
-    </div>
+    <h1>Welcome to Our Website!</h1>
+    <p>If you have any questions, feel free to chat with us!</p>
+
+    <!-- Chatwoot Embed Code -->
     <script>
-        // Hide loading message once the iframe has loaded
-        const loadingMessage = document.querySelector('.loading');
-        const iframe = document.querySelector('iframe');
-
-        iframe.onload = function() {
-            loadingMessage.style.display = 'none'; // Hide loading message
-            console.log('WidgetBot iframe has loaded successfully');
-        };
-
-        // Error handling for the iframe
-        iframe.onerror = function() {
-            loadingMessage.textContent = 'Failed to load WidgetBot. Please check the server and channel IDs.';
-            console.error('Error loading WidgetBot iframe');
-        };
+      (function(d,t) {
+        var BASE_URL="https://app.chatwoot.com";
+        var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+        g.src=BASE_URL+"/packs/js/sdk.js";
+        g.defer = true;
+        g.async = true;
+        s.parentNode.insertBefore(g,s);
+        g.onload=function(){
+          window.chatwootSDK.run({
+            websiteToken: 'NuhduwTy2AM1g5jV7A8s35cS', // Your website token
+            baseUrl: BASE_URL
+          })
+        }
+      })(document,"script");
     </script>
 </body>
 </html>
