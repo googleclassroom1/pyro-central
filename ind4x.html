@@ -251,9 +251,22 @@
         document.querySelector('.toggle').addEventListener('click', function() {
             document.querySelector('.navbar').classList.toggle('active');
         });
+
+        // Chatwoot Embed Code
+        (function(d,t) {
+          var BASE_URL="https://app.chatwoot.com";
+          var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+          g.src=BASE_URL+"/packs/js/sdk.js";
+          g.defer = true;
+          g.async = true;
+          s.parentNode.insertBefore(g,s);
+          g.onload=function(){
+            window.chatwootSDK.run({
+              websiteToken: 'NuhduwTy2AM1g5jV7A8s35cS', // Your website token
+              baseUrl: BASE_URL
+            })
+          }
+        })(document,"script");
     </script>
-  
-
-
 </body>
 </html>
