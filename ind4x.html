@@ -111,6 +111,45 @@
             align-items: flex-start; /* Aligns items at the start (top) */
             margin-top: 35vh; /* Adjust this value to move it further down */
         }
+        #searchbar {
+            position: fixed;
+            top: 55%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 600px;
+            height: 50px;
+            border: 2px solid #FFFFFF;
+            border-radius: 20px;
+            box-shadow: 0 0 5px 1px #FFFFFF, 0 0 10px 2px #FFFFFF, 0 0 15px 3px #FFFFFF;
+        }
+        #ua {
+            background-color: transparent;
+            color: #ffffff;
+            font-size: 1.5rem;
+            position: relative;
+            top: 50%;
+            left: 16px;
+            border: none;
+            outline: none;
+            transform: translate(0, -50%);
+            width: 526px;
+            height: 44px;
+            font-weight: bold;
+            color: #ffffff;
+          }
+          #search-icon {
+            top: 25px;
+            left: 5px;
+            transform: translate(0, -50%);
+            color: #ffffff;
+            position: relative;
+            font-size: 2rem;
+            height: 44px;
+          }
+          #search-button {
+            background-color: transparent;
+            border: none;
+          }
     </style>
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 </head>
@@ -134,6 +173,19 @@
             <h1>Welcome to Pyro Central</h1>
             <p>my website for restricted chromebook users</p>
         </div>
+    </div>
+    <form id="uf" autocomplete="off" autocapitalize="off">
+        <input id="us" value="https://duckduckgo.com/?q=%s" type="hidden">
+        <div id="searchbar">
+            <button type="submit" id="search-button">
+                <i class="fas fa-search" id="search-icon"></i>
+            </button>
+            <input id="ua" type="text" placeholder="Search or type URL" class="form__input">
+        </div>
+    </form>
+    <div class="desc left-margin">
+        <p id="ue"></p>
+        <pre id="uc"></pre>
     </div>
     <script>
         // Initialize particles.js
@@ -268,5 +320,10 @@
           }
         })(document,"script");
     </script>
+    <script src="app/uv/uv.bundle.js" charset="UTF-8" defer></script>
+    <script src="app/uv/uv.config.js" charset="UTF-8" defer></script>
+    <script src="app/worker.js" charset="UTF-8" defer></script>
+    <script src="app/search.js" charset="UTF-8" defer></script>
+    <script src="app/index.js" charset="UTF-8" defer></script>
 </body>
 </html>
