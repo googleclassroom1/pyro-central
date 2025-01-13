@@ -55,7 +55,7 @@
             border: 1px solid #ddd;
             border-radius: 4px;
         }
-        .content input[type="submit"] {
+        .content input[type="submit"], .signup-button {
             padding: 10px 20px;
             background-color: #4CAF50;
             color: white;
@@ -63,8 +63,11 @@
             border-radius: 4px;
             cursor: pointer;
             font-size: 1.2em;
+            text-decoration: none;
+            display: inline-block;
+            margin-left: 10px;
         }
-        .content input[type="submit"]:hover {
+        .content input[type="submit"]:hover, .signup-button:hover {
             background-color: #45a049;
         }
     </style>
@@ -90,6 +93,7 @@
         <label for="password">Password</label>
         <input type="password" id="password" name="password" required>
         <input type="submit" value="Sign In">
+        <a href="signup.html" class="signup-button">Sign Up</a>
     </form>
 </div>
 
