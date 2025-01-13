@@ -84,7 +84,7 @@
 
 <div class="content">
     <h2>Sign In</h2>
-    <form>
+    <form onsubmit="return handleSignIn(event)">
         <label for="username">Username</label>
         <input type="text" id="username" name="username" required>
         <label for="password">Password</label>
@@ -96,6 +96,20 @@
 <footer>
     <p>&copy; 2025 Shark Maths</p>
 </footer>
+
+<script>
+    function handleSignIn(event) {
+        event.preventDefault();
+        var username = document.getElementById("username").value;
+        var password = document.getElementById("password").value;
+        
+        if (username === "haha" && password === "jet2holiday") {
+            window.location.href = "ind4x.html";
+        } else {
+            alert("Invalid username or password");
+        }
+    }
+</script>
 
 </body>
 </html>
