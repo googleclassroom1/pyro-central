@@ -150,6 +150,29 @@
             background-color: transparent;
             border: none;
           }
+          #link-container {
+            background-color: grey;
+            padding: 10px;
+            text-align: center;
+            margin-top: 20px;
+            border-radius: 10px;
+            cursor: pointer;
+            color: white;
+        }
+
+        .link-box {
+            background-color: grey;
+            padding: 10px;
+            margin-top: 10px;
+            text-align: center;
+            border-radius: 10px;
+            color: white;
+            cursor: pointer;
+        }
+
+        #link-container:hover, .link-box:hover {
+            background-color: #575757;
+        }
     </style>
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 </head>
@@ -182,6 +205,8 @@
             <input id="ua" type="text" placeholder="search pyro proxy" class="form__input">
         </div>
     </form>
+    <div id="link-container">+link</div>
+    <div id="link-list"></div>
     <div class="desc left-margin">
         <p id="ue"></p>
         <pre id="uc"></pre>
@@ -318,6 +343,28 @@
             })
           }
         })(document,"script");
+
+        const maxLinks = 5;
+        const linkContainer = document.getElementById('link-container');
+        const linkList = document.getElementById('link-list');
+
+        linkContainer.addEventListener('click', function() {
+            if (linkList.children.length >= maxLinks) {
+                alert('Maximum of 5 links allowed.');
+                return;
+            }
+
+            const link = prompt('Put in the link for the shortcut (and https)');
+            if (link) {
+                const linkBox = document.createElement('div');
+                linkBox.className = 'link-box';
+                linkBox.textContent = link;
+                linkBox.addEventListener('click', function() {
+                    window.open(link, '_blank');
+                });
+                linkList.appendChild(linkBox);
+            }
+        });
     </script>
     <script src="app/uv/uv.bundle.js" charset="UTF-8" defer></script>
     <script src="app/uv/uv.config.js" charset="UTF-8" defer></script>
