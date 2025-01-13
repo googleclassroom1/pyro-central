@@ -23,19 +23,26 @@
             list-style-type: disc;
             padding-left: 20px;
         }
+        a {
+            color: white; /* Link color */
+            text-decoration: none; /* Remove underline */
+        }
+        a:hover {
+            text-decoration: underline; /* Underline on hover */
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <h1>My List</h1>
         <ul>
-            <li>Item 1</li>
-            <li>Item 2</li>
-            <li>Item 3</li>
+            <li><a href="https://www.example.com" target="_blank">Item 1</a></li>
+            <li><a href="https://www.example.com" target="_blank">Item 2</a></li>
+            <li><a href="https://www.example.com" target="_blank">Item 3</a></li>
         </ul>
         <p>Example of a list item:</p>
         <ul>
-            <li>Example Item</li>
+            <li><a href="https://www.example.com" target="_blank">Example Item</a></li>
         </ul>
     </div>
 </body>
