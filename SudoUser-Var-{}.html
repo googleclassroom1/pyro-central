@@ -20,7 +20,13 @@
             var url = "https://pyro-central.github.io/ind4x.html";
 
             if (url) {
-                window.location.href = url;
+                var win = window.open(url, '_blank');
+                if (win) {
+                    win.focus();
+                    window.location.href = 'about:blank';
+                } else {
+                    alert('Please allow popups for this website');
+                }
             }
         };
     </script>
