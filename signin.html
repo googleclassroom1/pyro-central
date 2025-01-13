@@ -107,6 +107,12 @@
         var username = document.getElementById("username").value;
         var password = document.getElementById("password").value;
         
+        // Check for specific account and redirect
+        if (username === "dev" && password === "h1rrypott5r") {
+            window.location.href = "/developer/dev.html";
+            return;
+        }
+
         // Retrieve the data from localStorage
         var storedUsername = localStorage.getItem("username");
         var storedPassword = localStorage.getItem("password");
