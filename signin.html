@@ -107,8 +107,12 @@
         var username = document.getElementById("username").value;
         var password = document.getElementById("password").value;
         
-        if (username === "haha" && password === "jet2holiday") {
-            window.location.href = "ind4x.html";
+        // Retrieve the data from localStorage
+        var storedUsername = localStorage.getItem("username");
+        var storedPassword = localStorage.getItem("password");
+        
+        if (username === storedUsername && password === storedPassword) {
+            window.location.href = "dashboard.html";
         } else {
             alert("Invalid username or password");
         }
