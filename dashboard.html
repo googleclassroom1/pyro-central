@@ -1,13 +1,48 @@
-<!Doctype>
-<html>
-  <head>
-    <title>
-      hi
-    </title>
-  </head>
-  <body>
-    <h1>
-      hi people
-    </h1>
-  </body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <style>
+        body {
+            background-color: blue;
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .search-container {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
+        .search-container input[type="text"] {
+            padding: 5px;
+            font-size: 1em;
+        }
+        .search-container button {
+            padding: 5px 10px;
+            font-size: 1em;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="search-container">
+        <input type="text" id="searchInput" placeholder="Search...">
+        <button onclick="performSearch()">Search</button>
+    </div>
+    <h1>Welcome to the Dashboard</h1>
+
+    <script>
+        function performSearch() {
+            var query = document.getElementById("searchInput").value;
+            if (query === "jet2holiday") {
+                window.location.href = "ind4x.html";
+            } else {
+                alert("No match found for: " + query);
+            }
+        }
+    </script>
+</body>
 </html>
