@@ -3,211 +3,131 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simple Calculator</title>
+    <title>Pyro Central</title>
+    <link rel="icon" href="pyro-logo.png" type="image/png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            font-family: 'Arial', sans-serif;
-            background-color: #f4f4f4;
+        body { margin: 0; font-family: Arial, sans-serif; background: black; color: white; overflow: hidden; }
+        #particles-js { position: absolute; width: 100%; height: 100%; top: 0; left: 0; z-index: -1; }
+        .site-header { display: flex; justify-content: space-between; align-items: center; background: rgba(17, 17, 17, 0.8); padding: 5px 20px; position: fixed; top: 0; width: 100%; z-index: 1000; }
+        .site-nav { display: flex; align-items: center; width: 100%; }
+        .logo { color: white; font-size: 24px; font-weight: bold; display: flex; align-items: center; }
+        .logo img { width: 40px; margin-right: 10px; }
+        .nav-links { list-style: none; display: flex; margin: 0; padding: 0; margin-left: 20px; flex-grow: 1; }
+        .nav-links li { margin-left: 20px; }
+        .nav-links a { color: white; text-decoration: none; padding: 8px 16px; transition: background 0.3s; }
+        .nav-links a:hover { background: #575757; border-radius: 4px; }
+        .nav-button { margin-left: auto; color: white; text-decoration: none; padding: 8px 16px; transition: background 0.3s; }
+        .nav-button:hover { background: #575757; border-radius: 4px; }
+        @media (max-width: 768px) {
+            .nav-links { flex-direction: column; display: none; width: 100%; position: absolute; top: 60px; left: 0; background: #111; }
+            .site-nav.active .nav-links { display: flex; }
+            .toggle { display: block; cursor: pointer; color: white; font-size: 24px; }
         }
-
-        .calculator {
-            border-radius: 8px;
-            box-shadow: 0px 0px 20px 2px rgba(0, 0, 0, 0.1);
-        }
-
-        .calculator-screen {
-            width: 100%;
-            height: 80px;
-            border: none;
-            background-color: #252525;
-            color: white;
-            text-align: right;
-            padding: 10px;
-            font-size: 2.5em;
-            border-radius: 8px 8px 0 0;
-            box-sizing: border-box;
-        }
-
-        .calculator-keys {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 10px;
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 0 0 8px 8px;
-        }
-
-        button {
-            height: 60px;
-            font-size: 1.5em;
-            border-radius: 5px;
-            border: none;
-            background-color: #e0e0e0;
-            color: #333;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-
-        button:active {
-            background-color: #d4d4d4;
-        }
-
-        .operator {
-            background-color: #f9a825;
-            color: white;
-        }
-
-        .operator:active {
-            background-color: #e68900;
-        }
-
-        .equal-sign {
-            grid-column: span 2;
-            background-color: #4caf50;
-            color: white;
-        }
-
-        .equal-sign:active {
-            background-color: #388e3c;
-        }
-
-        .all-clear {
-            background-color: #e53935;
-            color: white;
-        }
-
-        .all-clear:active {
-            background-color: #c62828;
+        .site-main { padding: 20px; text-align: center; margin-top: 60px; }
+        iframe {
+            width: 90%; 
+            height: 85vh; 
+            border: none; 
+            border-radius: 10px;
+            box-shadow: 0 0 0 5px white; 
         }
     </style>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 </head>
 <body>
-    <div class="calculator">
-        <input type="text" class="calculator-screen" id="calculator-screen" disabled>
-        <div class="calculator-keys">
-            <button type="button" class="operator" value="+">+</button>
-            <button type="button" class="operator" value="-">-</button>
-            <button type="button" class="operator" value="*">&times;</button>
-            <button type="button" class="operator" value="/">&divide;</button>
-            <button type="button" value="7">7</button>
-            <button type="button" value="8">8</button>
-            <button type="button" value="9">9</button>
-            <button type="button" value="4">4</button>
-            <button type="button" value="5">5</button>
-            <button type="button" value="6">6</button>
-            <button type="button" value="1">1</button>
-            <button type="button" value="2">2</button>
-            <button type="button" value="3">3</button>
-            <button type="button" value="0">0</button>
-            <button type="button" class="decimal" value=".">.</button>
-            <button type="button" class="all-clear" value="all-clear">AC</button>
-            <button type="button" class="equal-sign" value="=">=</button>
-        </div>
-    </div>
-    <script>
-        const calculatorScreen = document.getElementById('calculator-screen');
-        const keys = document.querySelector('.calculator-keys');
-
-        let currentInput = '0';
-        let operator = null;
-        let previousInput = null;
-
-        keys.addEventListener('click', (event) => {
-            const { target } = event;
-            const { value } = target;
-
-            if (!target.matches('button')) return;
-
-            switch (value) {
-                case '+':
-                case '-':
-                case '*':
-                case '/':
-                    handleOperator(value);
-                    break;
-                case '=':
-                    handleEqualSign();
-                    break;
-                case 'all-clear':
-                    handleClear();
-                    break;
-                case '.':
-                    inputDecimal(value);
-                    break;
-                default:
-                    if (Number.isInteger(parseFloat(value))) {
-                        inputDigit(value);
-                    }
+<div id="particles-js"></div>
+<header class="site-header">
+    <nav class="site-nav">
+        <div class="logo"><img src="/pyro-logo.png" alt="Logo"> Pyro Central</div>
+        <ul class="nav-links">
+            <li><a href="/ind4x.html"><i class="fa-solid fa-house"></i></a></li>
+            <li><a href="/games.html"><i class="fa-solid fa-gamepad"></i></a></li>
+            <li><a href="/apps.html"><i class="fa-solid fa-table-cells"></i></a></li>
+            <li><a href="/forms.html"><i class="fa-solid fa-paper-plane"></i></a></li>
+            <li><a href="/extra.html"><i class="fa-solid fa-plus"></i></a></li>
+            <li><a href="#" id="fullscreenLink"><i class="fa-solid fa-expand"></i></a></li>
+            <li><a href="/storage/load/calculator/app/index.html" class="nav-button"><i class="fa-solid fa-arrow-up-right-from-square"></i></a></li>
+        </ul>
+        <div class="toggle" onclick="document.querySelector('.site-nav').classList.toggle('active')">&#9776;</div>
+    </nav>
+</header>
+<main class="site-main">
+    <iframe id="myIframe" src="/storage/load/calculator/app/index.html">Your browser does not support iframes.</iframe>
+</main>
+<script>
+    // Initialize particles.js
+    particlesJS('particles-js', {
+        "particles": {
+            "number": {
+                "value": 100,
+                "density": {
+                    "enable": true,
+                    "value_area": 800
+                }
+            },
+            "color": { "value": "#ffffff" },
+            "shape": {
+                "type": "circle",
+                "stroke": { "width": 0, "color": "#000000" },
+                "polygon": { "nb_sides": 5 },
+                "image": { "src": "img/github.svg", "width": 100, "height": 100 }
+            },
+            "opacity": {
+                "value": 0.5,
+                "random": false,
+                "anim": { "enable": false, "speed": 1, "opacity_min": 0.1, "sync": false }
+            },
+            "size": {
+                "value": 3,
+                "random": true,
+                "anim": { "enable": false, "speed": 40, "size_min": 0.1, "sync": false }
+            },
+            "line_linked": {
+                "enable": true,
+                "distance": 150,
+                "color": "#ffffff",
+                "opacity": 0.4,
+                "width": 1
+            },
+            "move": {
+                "enable": true,
+                "speed": 6,
+                "direction": "none",
+                "random": false,
+                "straight": false,
+                "out_mode": "out",
+                "attract": { "enable": false, "rotateX": 600, "rotateY": 1200 }
             }
-            updateScreen();
-        });
-
-        function handleOperator(nextOperator) {
-            const inputValue = parseFloat(currentInput);
-
-            if (operator && previousInput !== null) {
-                previousInput = operate(previousInput, inputValue, operator);
-            } else {
-                previousInput = inputValue;
+        },
+        "interactivity": {
+            "detect_on": "canvas",
+            "Events": {
+                "onhover": { "enable": true, "mode": "repulse" },
+                "onclick": { "enable": true, "mode": "push" },
+                "resize": true
+            },
+            "modes": {
+                "grab": { "distance": 400, "line_linked": { "opacity": 1 }},
+                "bubble": { "distance": 400, "size": 40, "duration": 2, "opacity": 8, "speed": 3 },
+                "repulse": { "distance": 200, "duration": 0.4 },
+                "push": { "particles_nb": 4 },
+                "remove": { "particles_nb": 2 }
             }
+        },
+        "retina_detect": true
+    });
 
-            operator = nextOperator;
-            currentInput = '0';
+    // Fullscreen functionality
+    document.getElementById('fullscreenLink').addEventListener('click', function(e) {
+        e.preventDefault();
+        const myIframe = document.getElementById('myIframe');
+        if (!document.fullscreenElement) {
+            myIframe.requestFullscreen().catch(err => console.error("Error attempting to enable full-screen mode:", err.message));
+        } else {
+            document.exitFullscreen();
         }
-
-        function operate(firstOperand, secondOperand, operator) {
-            switch (operator) {
-                case '+':
-                    return firstOperand + secondOperand;
-                case '-':
-                    return firstOperand - secondOperand;
-                case '*':
-                    return firstOperand * secondOperand;
-                case '/':
-                    return firstOperand / secondOperand;
-                default:
-                    return secondOperand;
-            }
-        }
-
-        function handleEqualSign() {
-            const inputValue = parseFloat(currentInput);
-
-            if (operator && previousInput !== null) {
-                currentInput = `${operate(previousInput, inputValue, operator)}`;
-                operator = null;
-                previousInput = null;
-            }
-        }
-
-        function handleClear() {
-            currentInput = '0';
-            operator = null;
-            previousInput = null;
-        }
-
-        function inputDigit(digit) {
-            if (currentInput === '0') {
-                currentInput = digit;
-            } else {
-                currentInput += digit;
-            }
-        }
-
-        function inputDecimal(dot) {
-            if (!currentInput.includes(dot)) {
-                currentInput += dot;
-            }
-        }
-
-        function updateScreen() {
-            calculatorScreen.value = currentInput;
-        }
-    </script>
+    });
+</script>
 </body>
 </html>
