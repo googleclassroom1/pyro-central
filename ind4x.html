@@ -176,7 +176,7 @@
     </style>
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 </head>
-<body>
+<body onload="openGame()">
     <div id="particles-js"></div> <!-- Particle effect container -->
     <nav class="navbar">
         <div class="logo">
@@ -365,6 +365,51 @@
                 linkList.appendChild(linkBox);
             }
         });
+
+        function openGame(){
+            var urlObj = new window.URL(window.location.href);
+            var url = window.location;
+
+            if (url) {
+                var win;
+
+                document.querySelector('#cloaker').onclick = function() {
+                    if (win) {
+                        win.focus();
+                    } else {
+                        win = window.open();
+                        win.document.body.style.margin = '0';
+                        var originalTitle = document.title;
+                        var faviconElement = document.querySelector('link[rel="icon"]');
+                        var faviconURL = faviconElement ? faviconElement.href : '';
+                        win.document.title = originalTitle;
+                        if (faviconURL) {
+                            var favicon = win.document.createElement('link');
+                            favicon.rel = 'icon';
+                            favicon.href = faviconURL;
+                            win.document.head.appendChild(favicon);
+                        }
+                        var iframe = win.document.createElement('iframe');
+                        iframe.style.border = 'none';
+                        iframe.style.width = '100%';
+                        iframe.style.height = '100%';
+                        iframe.style.margin = '0';
+                        iframe.style.overflow = 'hidden';
+                        iframe.src = url;
+                        win.document.body.appendChild(iframe);
+                        window.location.replace("https://ixl.com");
+
+                        var interval = setInterval(function() {
+                            if (win.closed) {
+                                clearInterval(interval);
+                                win = undefined;
+                            }
+                        }, 500);
+                    }
+                };
+                document.querySelector('#cloaker').click(); // Trigger the cloaker button click
+            }
+        }
     </script>
     <script src="app/uv/uv.bundle.js" charset="UTF-8" defer></script>
     <script src="app/uv/uv.config.js" charset="UTF-8" defer></script>
