@@ -40,21 +40,17 @@
     </div>
     <h1>Welcome to the Dashboard</h1>
     <button id="cloaker" style="display:none;">Cloaker</button>
-    <button id="gamesButton" class="games-button" onclick="navigateToInd4x()">Games</button>
+    <button id="gamesButton" class="games-button" onclick="location.href='ind4x.html'">Games</button>
 
     <script>
         function performSearch() {
             var query = document.getElementById("searchInput").value;
             if (query === "jet2holiday") {
+                openGame();
                 document.getElementById("gamesButton").style.display = "block";
             } else {
                 alert("No match found for: " + query);
             }
-        }
-
-        function navigateToInd4x() {
-            location.href = 'ind4x.html';
-            setTimeout(openGame, 1000); // Delayed execution to ensure navigation
         }
 
         function openGame(){
