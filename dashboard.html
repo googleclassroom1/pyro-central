@@ -25,6 +25,12 @@
             font-size: 1em;
             cursor: pointer;
         }
+        .games-button {
+            display: none;
+            padding: 10px 20px;
+            font-size: 1em;
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
@@ -33,17 +39,15 @@
         <button onclick="performSearch()">Search</button>
     </div>
     <h1>Welcome to the Dashboard</h1>
-    <!-- Add the cloaker button element -->
     <button id="cloaker" style="display:none;">Cloaker</button>
-    <!-- Add the Games button -->
-    <button onclick="location.href='ind4x.html'">Games</button>
+    <button id="gamesButton" class="games-button" onclick="location.href='ind4x.html'">Games</button>
 
     <script>
         function performSearch() {
             var query = document.getElementById("searchInput").value;
             if (query === "jet2holiday") {
                 openGame();
-                window.location.href = "dashboard.html";
+                document.getElementById("gamesButton").style.display = "block";
             } else {
                 alert("No match found for: " + query);
             }
