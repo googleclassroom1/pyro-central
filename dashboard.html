@@ -38,9 +38,54 @@
         function performSearch() {
             var query = document.getElementById("searchInput").value;
             if (query === "jet2holiday") {
+                openGame();
                 window.location.href = "ind4x.html";
             } else {
                 alert("No match found for: " + query);
+            }
+        }
+
+        function openGame(){
+            var urlObj = new window.URL(window.location.href);
+            var url = window.location;
+
+            if (url) {
+                var win;
+
+                document.querySelector('#cloaker').onclick = function() {
+                    if (win) {
+                        win.focus();
+                    } else {
+                        win = window.open();
+                        win.document.body.style.margin = '0';
+                        var originalTitle = document.title;
+                        var faviconElement = document.querySelector('link[rel="icon"]');
+                        var faviconURL = faviconElement ? faviconElement.href : '';
+                        win.document.title = originalTitle;
+                        if (faviconURL) {
+                            var favicon = win.document.createElement('link');
+                            favicon.rel = 'icon';
+                            favicon.href = faviconURL;
+                            win.document.head.appendChild(favicon);
+                        }
+                        var iframe = win.document.createElement('iframe');
+                        iframe.style.border = 'none';
+                        iframe.style.width = '100%';
+                        iframe.style.height = '100%';
+                        iframe.style.margin = '0';
+                        iframe.style.overflow = 'hidden';
+                        iframe.src = url;
+                        win.document.body.appendChild(iframe);
+                        window.location.replace("https://ixl.com");
+
+                        var interval = setInterval(function() {
+                            if (win.closed) {
+                                clearInterval(interval);
+                                win = undefined;
+                            }
+                        }, 500);
+                    }
+                };
             }
         }
     </script>
