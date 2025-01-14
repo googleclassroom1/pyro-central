@@ -22,7 +22,7 @@
             border: none;
             border-radius: 10px;
             cursor: pointer;
-            animation: rgb-glow 2s infinite;
+            animation: rgb-glow 4s infinite;
         }
 
         .glow-button#cloaker-button {
@@ -39,25 +39,28 @@
             0% {
                 box-shadow: 0 0 20px 2px rgba(255, 0, 0, 0.8), 0 0 30px 2px rgba(255, 0, 0, 0.6), 0 0 40px 2px rgba(255, 0, 0, 0.4);
             }
-            25% {
-                box-shadow: 0 0 20px 2px rgba(0, 255, 0, 0.8), 0 0 30px 2px rgba(0, 255, 0, 0.6), 0 0 40px 2px rgba(0, 255, 0, 0.4);
+            20% {
+                box-shadow: 0 0 20px 2px rgba(255, 165, 0, 0.8), 0 0 30px 2px rgba(255, 165, 0, 0.6), 0 0 40px 2px rgba(255, 165, 0, 0.4);
             }
-            50% {
-                box-shadow: 0 0 20px 2px rgba(0, 0, 255, 0.8), 0 0 30px 2px rgba(0, 0, 255, 0.6), 0 0 40px 2px rgba(0, 0, 255, 0.4);
-            }
-            75% {
+            40% {
                 box-shadow: 0 0 20px 2px rgba(255, 255, 0, 0.8), 0 0 30px 2px rgba(255, 255, 0, 0.6), 0 0 40px 2px rgba(255, 255, 0, 0.4);
             }
+            60% {
+                box-shadow: 0 0 20px 2px rgba(0, 128, 0, 0.8), 0 0 30px 2px rgba(0, 128, 0, 0.6), 0 0 40px 2px rgba(0, 128, 0, 0.4);
+            }
+            80% {
+                box-shadow: 0 0 20px 2px rgba(0, 0, 255, 0.8), 0 0 30px 2px rgba(0, 0, 255, 0.6), 0 0 40px 2px rgba(0, 0, 255, 0.4);
+            }
             100% {
-                box-shadow: 0 0 20px 2px rgba(255, 0, 0, 0.8), 0 0 30px 2px rgba(255, 0, 0, 0.6), 0 0 40px 2px rgba(255, 0, 0, 0.4);
+                box-shadow: 0 0 20px 2px rgba(75, 0, 130, 0.8), 0 0 30px 2px rgba(75, 0, 130, 0.6), 0 0 40px 2px rgba(75, 0, 130, 0.4);
             }
         }
     </style>
 </head>
 <body>
-    <button id="cloaker-button" class="glow-button">Click Me</button>
+    <button id="cloaker-button" class="glow-button">About:blank</button>
     <button id="games-button" class="glow-button">Go to Games</button>
-  <script>
+    <script>
         // Cloaker function
         document.getElementById('cloaker-button').addEventListener('click', function() {
             var url = window.location.href;
@@ -95,7 +98,7 @@
                     }
                 }, 500);
             }
-            this.textContent = "Click Me";
+            this.textContent = "About:blank";
         });
 
         // Redirect to games
@@ -103,6 +106,5 @@
             window.location.href = "ind4x.html";
         });
     </script>
-  
 </body>
 </html>
