@@ -31,23 +31,26 @@
             color: #fff;
             background: #000;
             border: none;
-            border-radius: 5px;
+            border-radius: 10px;
             cursor: pointer;
-            animation: rgb-glow 1.5s infinite;
+            animation: rgb-glow 2s infinite;
         }
 
         @keyframes rgb-glow {
             0% {
-                box-shadow: 0 0 10px 2px red;
+                box-shadow: 0 0 20px 2px rgba(255, 0, 0, 0.8), 0 0 30px 2px rgba(255, 0, 0, 0.6), 0 0 40px 2px rgba(255, 0, 0, 0.4);
             }
-            33% {
-                box-shadow: 0 0 10px 2px green;
+            25% {
+                box-shadow: 0 0 20px 2px rgba(0, 255, 0, 0.8), 0 0 30px 2px rgba(0, 255, 0, 0.6), 0 0 40px 2px rgba(0, 255, 0, 0.4);
             }
-            66% {
-                box-shadow: 0 0 10px 2px blue;
+            50% {
+                box-shadow: 0 0 20px 2px rgba(0, 0, 255, 0.8), 0 0 30px 2px rgba(0, 0, 255, 0.6), 0 0 40px 2px rgba(0, 0, 255, 0.4);
+            }
+            75% {
+                box-shadow: 0 0 20px 2px rgba(255, 255, 0, 0.8), 0 0 30px 2px rgba(255, 255, 0, 0.6), 0 0 40px 2px rgba(255, 255, 0, 0.4);
             }
             100% {
-                box-shadow: 0 0 10px 2px red;
+                box-shadow: 0 0 20px 2px rgba(255, 0, 0, 0.8), 0 0 30px 2px rgba(255, 0, 0, 0.6), 0 0 40px 2px rgba(255, 0, 0, 0.4);
             }
         }
     </style>
