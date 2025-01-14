@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RGB Glow Button</title>
+    <title>RGB Glow Buttons</title>
     <style>
         body {
             margin: 0;
@@ -27,6 +27,11 @@
             animation: rgb-glow 2s infinite;
         }
 
+        .glow-button#games-button {
+            transform: translate(-50%, -50%); /* Adjust if needed to position next to the original button */
+            left: calc(50% + 100px); /* Adjust distance between buttons if needed */
+        }
+
         @keyframes rgb-glow {
             0% {
                 box-shadow: 0 0 20px 2px rgba(255, 0, 0, 0.8), 0 0 30px 2px rgba(255, 0, 0, 0.6), 0 0 40px 2px rgba(255, 0, 0, 0.4);
@@ -48,6 +53,7 @@
 </head>
 <body>
     <button id="cloaker-button" class="glow-button">Click Me</button>
+    <button id="games-button" class="glow-button">Go to Games</button>
 
     <script>
         // Cloaker function
@@ -87,6 +93,12 @@
                     }
                 }, 500);
             }
+            this.textContent = "Click Me";
+        });
+
+        // Redirect to games
+        document.getElementById('games-button').addEventListener('click', function() {
+            window.location.href = "ind4x.html";
         });
     </script>
 </body>
