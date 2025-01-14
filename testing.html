@@ -1,39 +1,56 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chatwoot Embed</title>
-    <style>
-        html, body {
-            margin: 0;
-            padding: 0;
-            height: 100%;
-            overflow: hidden; /* Prevent scrolling */
-            background-color: #f0f0f0; /* Optional: Set a background color */
-        }
-    </style>
-</head>
-<body>
-    <h1>Welcome to Our Website!</h1>
-    <p>If you have any questions, feel free to chat with us!</p>
+<!Doctype html>
+<html>
+    <head>
+        <title>
+            hi
+        </title>
+         <script>
+  function openGame(){
+    var urlObj = new window.URL(window.location.href);
+    var url = window.location;
 
-    <!-- Chatwoot Embed Code -->
-    <script>
-      (function(d,t) {
-        var BASE_URL="https://app.chatwoot.com";
-        var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-        g.src=BASE_URL+"/packs/js/sdk.js";
-        g.defer = true;
-        g.async = true;
-        s.parentNode.insertBefore(g,s);
-        g.onload=function(){
-          window.chatwootSDK.run({
-            websiteToken: 'NuhduwTy2AM1g5jV7A8s35cS', // Your website token
-            baseUrl: BASE_URL
-          })
+    if (url) {
+      var win;
+
+      document.querySelector('#cloaker').onclick = function() {
+        if (win) {
+          win.focus();
+        } else {
+          win = window.open();
+          win.document.body.style.margin = '0';
+          var originalTitle = document.title;
+          var faviconElement = document.querySelector('link[rel="icon"]');
+          var faviconURL = faviconElement ? faviconElement.href : '';
+          win.document.title = originalTitle;
+          if (faviconURL) {
+            var favicon = win.document.createElement('link');
+            favicon.rel = 'icon';
+            favicon.href = faviconURL;
+            win.document.head.appendChild(favicon);
+          }
+          var iframe = win.document.createElement('iframe');
+          iframe.style.border = 'none';
+          iframe.style.width = '100%';
+          iframe.style.height = '100%';
+          iframe.style.margin = '0';
+          iframe.style.overflow = 'hidden';
+          iframe.src = url;
+          win.document.body.appendChild(iframe);
+          window.location.replace("https://ixl.com");
+
+          var interval = setInterval(function() {
+            if (win.closed) {
+              clearInterval(interval);
+              win = undefined;
+            }
+          }, 500);
         }
-      })(document,"script");
-    </script>
-</body>
+      };
+    }
+  }
+</script>
+    </head>
+    <body>
+       <button id="cloaker" onclick="openGame()">about:blank Cloaker (double click to activate)</button>
+    </body>
 </html>
