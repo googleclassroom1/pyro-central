@@ -47,6 +47,12 @@
             left: 57%;
             transform: translate(-50%, -50%);
         }
+        
+        .glow-button#new-button-3 {
+            top: 70%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
 
         @keyframes rgb-glow {
             0% {
@@ -75,6 +81,7 @@
     <button id="games-button" class="glow-button">Go to Games</button>
     <button id="new-button-1" class="glow-button">The Pizza Edition</button>
     <button id="new-button-2" class="glow-button">Frogies Arcade</button>
+    <button id="new-button-3" class="glow-button">Pizza Edition Site</button>
     <script>
         // Cloaker function
         document.getElementById('cloaker-button').addEventListener('click', function() {
@@ -124,6 +131,11 @@
         // Redirect to new URL
         document.getElementById('new-button-2').addEventListener('click', function() {
             window.location.href = "https://frogiesarca.de";
+        });
+
+        // Redirect to new URL
+        document.getElementById('new-button-3').addEventListener('click', function() {
+            window.location.href = "https://hi.pizzaedition.site";
         });
     </script>
 </body>
