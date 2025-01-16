@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LKBB Chat</title>
+    <style>
+        html, body {
+            margin: 0;
+            height: 100%;
+            overflow: hidden;
+        }
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f0f0f0;
+        }
+        .chat-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 100vh;
+            background-color: #ffffff;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            max-width: 600px;
+            width: 100%;
+        }
+        .chat-header {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+            font-size: 1.5em;
+        }
+        .chat-messages {
+            flex: 1;
+            padding: 10px;
+            overflow-y: auto;
+            border-top: 1px solid #ccc;
+        }
+        .chat-input-container {
+            display: flex;
+            border-top: 1px solid #ccc;
+        }
+        .chat-input {
+            flex: 1;
+            padding: 10px;
+            border: none;
+            resize: none;
+        }
+        .send-button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="chat-container">
+        <div class="chat-header">LKBB Chat</div>
+        <div class="chat-messages" id="chat-messages"></div>
+        <div class="chat-input-container">
+            <textarea class="chat-input" id="chat-input" rows="1"></textarea>
+            <button class="send-button" onclick="sendMessage()">Send</button>
+        </div>
+    </div>
+    <script>
+        function sendMessage() {
+            const input = document.getElementById('chat-input');
+            const messages = document.getElementById('chat-messages');
+            if (input.value.trim() !== '') {
+                const newMessage = document.createElement('div');
+                newMessage.textContent = input.value;
+                messages.appendChild(newMessage);
+                input.value = '';
+                messages.scrollTop = messages.scrollHeight;
+            }
+        }
+        document.getElementById('chat-input').addEventListener('keypress', function(event) {
+            if (event.key === 'Enter' && !event.shiftKey) {
+                event.preventDefault();
+                sendMessage();
+            }
+        });
+    </script>
+</body>
+</html>
