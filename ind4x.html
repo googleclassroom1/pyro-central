@@ -175,22 +175,6 @@
         }
     </style>
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-   <script type="text/javascript">
-  window.$crisp = [];
-  window.CRISP_WEBSITE_ID = "98006de2-e6a4-482c-bea7-75cd2e199619";
-  (function() {
-    d = document;
-    s = d.createElement("script");
-    s.src = "https://client.crisp.chat/l.js";
-    s.async = 1;
-    d.getElementsByTagName("head")[0].appendChild(s);
-  })();
-</script>
-<style>
-  .crisp-client .crisp-client--bottom {
-    left: 0 !important;
-  }
-</style>
 </head>
 <body onload="openGame()">
     <div id="particles-js"></div> <!-- Particle effect container -->
@@ -343,22 +327,6 @@
         document.querySelector('.toggle').addEventListener('click', function() {
             document.querySelector('.navbar').classList.toggle('active');
         });
-
-        // Chatwoot Embed Code
-        (function(d,t) {
-          var BASE_URL="https://app.chatwoot.com";
-          var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-          g.src=BASE_URL+"/packs/js/sdk.js";
-          g.defer = true;
-          g.async = true;
-          s.parentNode.insertBefore(g,s);
-          g.onload=function(){
-            window.chatwootSDK.run({
-              websiteToken: 'NuhduwTy2AM1g5jV7A8s35cS', // Your website token
-              baseUrl: BASE_URL
-            })
-          }
-        })(document,"script");
 
         const maxLinks = 5;
         const linkContainer = document.getElementById('link-container');
