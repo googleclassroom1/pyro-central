@@ -172,9 +172,17 @@
             "6",
         ];
 
+        let lastLine = null;
+
         function getRandomLine() {
-            const randomIndex = Math.floor(Math.random() * lines.length);
-            return lines[randomIndex];
+            let randomIndex;
+            let randomLine;
+            do {
+                randomIndex = Math.floor(Math.random() * lines.length);
+                randomLine = lines[randomIndex];
+            } while (randomLine === lastLine);
+            lastLine = randomLine;
+            return randomLine;
         }
 
         function copyToClipboard(text) {
