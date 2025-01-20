@@ -1,0 +1,7 @@
+#freddy {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    pointer-events: none;
+}
