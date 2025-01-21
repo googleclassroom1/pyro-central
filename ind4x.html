@@ -9,183 +9,11 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="/mousefollow/mouse-follow.css">
-
-    
-
-
-    
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background: black;
-            color: white;
-            overflow: hidden; /* Hide overflow for particle effect */
-        }
-
-        #particles-js {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            top: 0;
-            left: 0;
-            z-index: -1; /* Position behind everything else */
-        }
-
-        .navbar {
-            display: flex;
-            justify-content: flex-start; /* Move links to the left */
-            align-items: center;
-            background: rgba(17, 17, 17, 0.8); /* Slightly transparent background */
-            padding: 5px 20px;
-            position: fixed;
-            top: 0;
-            width: 100%;
-            z-index: 1000;
-        }
-
-        .logo {
-            color: white;
-            font-size: 24px;
-            font-weight: bold;
-            display: flex;
-            align-items: center;
-            margin-right: 20px; /* Add some margin to the right of the logo */
-        }
-
-        .logo img {
-            width: 40px;
-            margin-right: 10px;
-        }
-
-        .nav-links {
-            list-style: none;
-            display: flex;
-            margin: 0;
-            padding: 0;
-        }
-
-        .nav-links li {
-            margin-left: 20px; /* Spacing between links */
-        }
-
-        .nav-links a {
-            color: white;
-            text-decoration: none;
-            padding: 8px 16px;
-            transition: background 0.3s;
-        }
-
-        .nav-links a:hover {
-            background: #575757;
-            border-radius: 4px;
-        }
-
-        @media (max-width: 768px) {
-            .nav-links {
-                flex-direction: column;
-                display: none;
-                width: 100%;
-                position: absolute;
-                top: 60px;
-                left: 0;
-                background: #111;
-            }
-
-            .navbar.active .nav-links {
-                display: flex;
-            }
-
-            .toggle {
-                display: block;
-                cursor: pointer;
-                color: white;
-                font-size: 24px;
-            }
-        }
-
-        .toggle {
-            display: none; /* Keep toggle button hidden on larger screens */
-        }
-
-        .content {
-            padding: 20px;
-            text-align: center;
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: flex-start; /* Aligns items at the start (top) */
-            margin-top: 35vh; /* Adjust this value to move it further down */
-        }
-        #searchbar {
-            position: fixed;
-            top: 55%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 600px;
-            height: 50px;
-            border: 2px solid #FFFFFF;
-            border-radius: 20px;
-            box-shadow: 0 0 5px 1px #FFFFFF, 0 0 10px 2px #FFFFFF, 0 0 15px 3px #FFFFFF;
-        }
-        #ua {
-            background-color: transparent;
-            color: #ffffff;
-            font-size: 1.5rem;
-            position: relative;
-            top: 50%;
-            left: 16px;
-            border: none;
-            outline: none;
-            transform: translate(0, -50%);
-            width: 526px;
-            height: 44px;
-            font-weight: bold;
-            color: #ffffff;
-          }
-          #search-icon {
-            top: 25px;
-            left: 5px;
-            transform: translate(0, -50%);
-            color: #ffffff;
-            position: relative;
-            font-size: 2rem;
-            height: 44px;
-          }
-          #search-button {
-            background-color: transparent;
-            border: none;
-          }
-          #link-container {
-            background-color: grey;
-            padding: 10px;
-            text-align: center;
-            margin-top: 20px;
-            border-radius: 10px;
-            cursor: pointer;
-            color: white;
-        }
-
-        .link-box {
-            background-color: grey;
-            padding: 10px;
-            margin-top: 10px;
-            text-align: center;
-            border-radius: 10px;
-            color: white;
-            cursor: pointer;
-        }
-
-        #link-container:hover, .link-box:hover {
-            background-color: #575757;
-        }
-    </style>
-    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-   <script src="/crisp.js" type="text/javascript"></script>
     <script src="/mousefollow/mouse-follow.js"></script>
+    <link rel="stylesheet" href="/mousefollow/hide-all-cursors.css">
 </head>
 <body onload="openGame()">
-    <div id="particles-js"></div> <!-- Particle effect container -->
+    <div id="particles-js"></div>
     <nav class="navbar">
         <div class="logo">
             <img src="pyro-logo.png" alt="Logo"> Pyro Central
@@ -204,6 +32,7 @@
             <h1>Welcome to Pyro Central</h1>
         </div>
     </div>
+    <img id="freddy" src="/images/freddy.png" alt="Freddy">
     <form id="uf" autocomplete="off" autocapitalize="off">
         <input id="us" value="https://duckduckgo.com/?q=%s" type="hidden">
         <div id="searchbar">
@@ -219,22 +48,24 @@
         <p id="ue"></p>
         <pre id="uc"></pre>
     </div>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="/crisp.js" type="text/javascript"></script>
     <script>
         // Initialize particles.js
         particlesJS('particles-js', {
             "particles": {
                 "number": {
-                    "value": 100,  // Number of particles
+                    "value": 100,
                     "density": {
                         "enable": true,
                         "value_area": 800
                     }
                 },
                 "color": {
-                    "value": "#ffffff" // Color of particles
+                    "value": "#ffffff"
                 },
                 "shape": {
-                    "type": "circle", // Shapes: "circle", "edge", "triangle", "polygon", "star", "image"
+                    "type": "circle",
                     "stroke": {
                         "width": 0,
                         "color": "#000000"
@@ -410,4 +241,3 @@
     <script src="app/index.js" charset="UTF-8" defer></script>
 </body>
 </html>
-hi guys
