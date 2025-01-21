@@ -1,3 +1,4 @@
+/* Existing content of mouse-follow.css */
 #freddy {
     position: absolute;
     width: 50px;
@@ -8,4 +9,9 @@
 
 body {
     cursor: none;
+}
+
+/* Content from hide-all-cursors.css */
+body, button, textarea, input, select {
+    cursor: none !important;
 }
