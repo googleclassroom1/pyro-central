@@ -31,12 +31,12 @@ function UnityProgress(gameInstance, progress) {
 
     if(progress>= 0.9 && progress<1)
     {
-        gameInstance.textProgress.innerHTML = 'life sucks Im toby lopez' +' <img src="' + rootPath + '/gears.gif" class="spinner" />';
+        gameInstance.textProgress.innerHTML = 'bop house' +' <img src="' + rootPath + '/gears.gif" class="spinner" />';
         gameInstance.progress.style.display = 'none';
     }
     else
     {
-        gameInstance.textProgress.innerHTML = 'Loading - ' + Math.floor(progress * 100) + '%' + ' <img src="' + rootPath + '/gears.gif" class="spinner" />';
+        gameInstance.textProgress.innerHTML = 'Sophie Rain - ' + Math.floor(progress * 100) + '%' + ' <img src="' + rootPath + '/gears.gif" class="spinner" />';
     }
 
     /*
