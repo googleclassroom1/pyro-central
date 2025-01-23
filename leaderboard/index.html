@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game List</title>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: black;
+            overflow: hidden;
+            font-family: Arial, sans-serif;
+        }
+        #particles-js {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+        .glow-button {
+            display: block;
+            margin: 40px auto 20px; /* Added margin-top of 40px */
+            padding: 10px 20px; /* Reduced padding to make buttons narrower */
+            width: 200px; /* Set a fixed width for the buttons */
+            font-size: 18px; /* Reduced font size to fit the narrower buttons */
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 10px;
+            background-color: rgb(51, 47, 47); /* Set button background to grey */
+            box-shadow: 0 0 15px rgba(255, 0, 0, 0.5),
+                        0 0 30px rgba(0, 255, 0, 0.5),
+                        0 0 45px rgba(0, 0, 255, 0.5);
+            animation: glow 5s linear infinite;
+        }
+        @keyframes glow {
+            0% { box-shadow: 0 0 15px rgba(255, 0, 0, 0.5),
+                          0 0 30px rgba(0, 255, 0, 0.5),
+                          0 0 45px rgba(0, 0, 255, 0.5); }
+            50% { box-shadow: 0 0 30px rgba(0, 255, 0, 0.5),
+                           0 0 15px rgba(0, 0, 255, 0.5),
+                           0 0 45px rgba(255, 0, 0, 0.5); }
+            100% { box-shadow: 0 0 15px rgba(255, 0, 0, 0.5),
+                           0 0 30px rgba(0, 255, 0, 0.5),
+                           0 0 45px rgba(0, 0, 255, 0.5); }
+        }
+    </style>
+</head>
+<body>
+    <p>.</p>
+    <p>.</p>
+    <p>.</p>
+    <p>.</p>
+    <p>.</p>
+    <p>.</p>
+    <p>.</p>
+    <p>.</p>
+    <p>.</p>
+    <div id="particles-js"></div>
+    <a href="#" class="glow-button">ADOFAI</a>
+    <a href="#" class="glow-button">2048</a>
+    <a href="#" class="glow-button">Cluster Rush</a>
+    <a href="#" class="glow-button">Bad Ice Cream</a>
+    <a href="#" class="glow-button">Slope</a>
+    <a href="#" class="glow-button">Snow Rider</a>
+    <a href="#" class="glow-button">10 Minutes Till Dawn</a>
+
+    <script>
+        particlesJS("particles-js", {
+            "particles": {
+                "number": {
+                    "value": 80,
+                    "density": {
+                        "enable": true,
+                        "value_area": 800
+                    }
+                },
+                "color": {
+                    "value": "#FFD700" // Set the particle color to gold
+                },
+                "shape": {
+                    "type": "circle",
+                    "stroke": {
+                        "width": 0,
+                        "color": "#000000"
+                    },
+                    "polygon": {
+                        "nb_sides": 5
+                    }
+                },
+                "opacity": {
+                    "value": 0.5,
+                    "random": false,
+                    "anim": {
+                        "enable": false,
+                        "speed": 1,
+                        "opacity_min": 0.1,
+                        "sync": false
+                    }
+                },
+                "size": {
+                    "value": 3,
+                    "random": true,
+                    "anim": {
+                        "enable": false,
+                        "speed": 40,
+                        "size_min": 0.1,
+                        "sync": false
+                    }
+                },
+                "line_linked": {
+                    "enable": true,
+                    "distance": 150,
+                    "color": "#FFD700", // Set the line color to gold
+                    "opacity": 0.4,
+                    "width": 1
+                },
+                "move": {
+                    "enable": true,
+                    "speed": 6,
+                    "direction": "none",
+                    "random": false,
+                    "straight": false,
+                    "out_mode": "out",
+                    "bounce": false,
+                    "attract": {
+                        "enable": false,
+                        "rotateX": 600,
+                        "rotateY": 1200
+                    }
+                }
+            },
+            "interactivity": {
+                "detect_on": "canvas",
+                "events": {
+                    "onhover": {
+                        "enable": true,
+                        "mode": "repulse"
+                    },
+                    "onclick": {
+                        "enable": true,
+                        "mode": "push"
+                    },
+                    "resize": true
+                },
+                "modes": {
+                    "grab": {
+                        "distance": 400,
+                        "line_linked": {
+                            "opacity": 1
+                        }
+                    },
+                    "bubble": {
+                        "distance": 400,
+                        "size": 40,
+                        "duration": 2,
+                        "opacity": 8,
+                        "speed": 3
+                    },
+                    "repulse": {
+                        "distance": 200,
+                        "duration": 0.4
+                    },
+                    "push": {
+                        "particles_nb": 4
+                    },
+                    "remove": {
+                        "particles_nb": 2
+                    }
+                }
+            },
+            "retina_detect": true
+        });
+    </script>
+</body>
+</html>
