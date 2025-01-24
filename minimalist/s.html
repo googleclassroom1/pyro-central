@@ -3,96 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Particles with Switch</title>
+    <title>Pyro Central</title>
     <style>
         body {
-            margin: 0;
-            overflow: hidden;
-            background-color: #2e2e2e;
-        }
-        .switch {
-            position: absolute;
-            bottom: 20px;
-            left: 20px;
-            background-color: white;
-            border: none;
-            padding: 10px 20px;
-            cursor: pointer;
-        }
-       .navbar {
-            display: flex;
-            justify-content: flex-start;
-            align-items: center;
-            background: #2e2e2e;
-            padding: 5px 20px;
-            position: fixed;
-            top: 0;
-            width: 100%;
-            z-index: 1000;
-        }
-        .logo {
-            color: white;
-            font-size: 24px;
-            font-weight: bold;
-            display: flex;
-            align-items: center;
-            margin-right: 20px;
-        }
-        .logo img {
-            width: 40px;
-            margin-right: 10px;
-        }
-        .nav-links {
-            list-style: none;
-            display: flex;
+            background-color: #2e2e2e; /* Darker grey background */
+            font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
         }
-        .nav-links li {
-            margin-left: 20px;
+        nav {
+            background-color: #2e2e2e; /* Same as the background color */
+            width: 100%;
+            text-align: center;
+            padding: 1rem 0;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add subtle shadow */
+            position: fixed; /* Make navbar fixed at the top */
+            top: 0;
         }
-        .nav-links a {
+        nav a {
             color: white;
             text-decoration: none;
-            padding: 8px 16px;
-            transition: background 0.3s;
+            margin: 0 1rem;
+            transition: color 0.3s;
         }
-        .nav-links a:hover {
-            background: #575757;
-            border-radius: 4px;
+        nav a:hover {
+            color: #ff9800; /* Hover color change */
         }
-        @media (max-width: 768px) {
-            .nav-links {
-                flex-direction: column;
-                display: none;
-                width: 100%;
-                position: absolute;
-                top: 60px;
-                left: 0;
-                background: #2e2e2e;
-            }
-            .navbar.active .nav-links {
-                display: flex;
-            }
-            .toggle {
-                display: block;
-                cursor: pointer;
-                color: white;
-                font-size: 24px;
-            }
+        .settings-button {
+            position: fixed;
+            bottom: 1rem;
+            left: 1rem;
+            background-color: white; /* Button color */
+            color: #2e2e2e;
+            border: none;
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s;
         }
-        .toggle {
-            display: none; /* Hide toggle button by default */
+        .settings-button:hover {
+            background-color: #e0e0e0; /* Hover color */
         }
     </style>
 </head>
 <body>
     <nav>
-        <a href="/minimalist/index.html">H</a>
         <a href="/minimalist/g.html">G</a>
+        <a href="/minimalist/s.html">S</a>
         <a href="/minimalist/e.html">E</a>
     </nav>
-
-    <button class="switch" onclick="window.location.href='/settings.html'">Normal</button>
+    <button class="settings-button" onclick="window.location.href='/settings.html'">Normal</button>
 </body>
 </html>
