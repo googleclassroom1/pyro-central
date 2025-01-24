@@ -8,10 +8,10 @@
 }
 
 body {
-    cursor: none;
+    cursor: url('/images/cursor.png'), auto;
 }
 
 /* Content from hide-all-cursors.css */
 body, button, textarea, input, select {
-    cursor: none !important;
+    cursor: url('/images/cursor.png') !important;
 }
