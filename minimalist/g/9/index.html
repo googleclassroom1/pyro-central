@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        nav {
+            background-color: #2e2e2e; /* Same as the background color */
+            width: 100%;
+            text-align: center;
+            padding: 1rem 0;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add subtle shadow */
+            position: fixed; /* Make navbar fixed at the top */
+            top: 0;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 1rem;
+            transition: color 0.3s;
+        }
+        nav a:hover {
+            color: #ff9800; /* Hover color change */
+        }
+    </style>
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pyro Central</title>
+    <link rel="icon" href="pyro-logo.png" type="image/png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body { margin: 0; font-family: Arial, sans-serif; background: #2e2e2e; color: white; overflow: hidden; }
+        .site-main { padding: 20px; text-align: center; margin-top: 60px; }
+        iframe {
+            width: 90%; 
+            height: 90vh; 
+            border: none; 
+            border-radius: 10px;
+            box-shadow: 0 0 0 5px white; 
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="/minimalist/g.html">G</a>
+        <a href="/minimalist/s.html">S</a>
+        <a href="/minimalist/e.html">E</a>
+    </nav>
+<header class="site-header">
+</header>
+<main class="site-main">
+    <iframe id="myIframe" src="/storage/load/10tilldawn/game/">Your browser does not support iframes.</iframe>
+</main>
+<script>
+    // Fullscreen functionality
+    document.getElementById('fullscreenLink').addEventListener('click', function(e) {
+        e.preventDefault();
+        const myIframe = document.getElementById('myIframe');
+        if (!document.fullscreenElement) {
+            myIframe.requestFullscreen().catch(err => console.error("Error attempting to enable full-screen mode:", err.message));
+        } else {
+            document.exitFullscreen();
+        }
+    });
+</script>
+
+</body>
+</html>
