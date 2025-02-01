@@ -123,15 +123,23 @@
         <div class="dropdown">
             <button class="dropbtn">XXXTENTACION</button>
             <div class="dropdown-content">
-                <a href="#" onclick="playSong()">Jocelyn Flores</a>
+                <a href="#" onclick="playSong('jocelynflores.mp3')">Jocelyn Flores</a>
             </div>
         </div>
-        <audio id="audio" src="/music/jocelynflores.mp3"></audio>
+        <h1>Niko B</h1>
+        <div class="dropdown">
+            <button class="dropbtn">NIKO B</button>
+            <div class="dropdown-content">
+                <a href="#" onclick="playSong('weed9times.mp3')">I've Smoked Weed 9 Times And Have Had Only 1 Good Experience</a>
+            </div>
+        </div>
+        <audio id="audio"></audio>
     </div>
 
     <script>
-        function playSong() {
+        function playSong(song) {
             var audio = document.getElementById('audio');
+            audio.src = '/music/' + song;
             audio.play();
         }
 
