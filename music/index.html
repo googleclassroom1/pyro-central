@@ -76,6 +76,7 @@
         .dropdown {
             position: relative;
             display: inline-block;
+            z-index: 100;
         }
 
         .dropdown-content {
@@ -84,7 +85,7 @@
             background-color: #111;
             min-width: 160px;
             box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-            z-index: 1;
+            z-index: 101;
         }
 
         .dropdown-content a {
@@ -110,11 +111,11 @@
             <img src="/pyro-logo.png" alt="Logo"> Pyro Central
         </div>
         <ul class="nav-links">
-            <li><a href="/ind4x.html"><i class="fa-solid fa-house"></i></a></li>
-            <li><a href="/games.html"><i class="fa-solid fa-gamepad"></i></a></li>
-            <li><a href="/apps.html"><i class="fa-solid fa-table-cells"></i></a></li>
-            <li><a href="/forms.html"><i class="fa-solid fa-paper-plane"></i></a></li>
-            <li><a href="/extra.html"><i class="fa-solid fa-plus"></i></a></li>
+            <li><a href="/ind4x.html"><i class="fas fa-house"></i></a></li>
+            <li><a href="/games.html"><i class="fas fa-gamepad"></i></a></li>
+            <li><a href="/apps.html"><i class="fas fa-table-cells"></i></a></li>
+            <li><a href="/forms.html"><i class="fas fa-paper-plane"></i></a></li>
+            <li><a href="/extra.html"><i class="fas fa-plus"></i></a></li>
         </ul>
     </nav>
 
@@ -132,9 +133,33 @@
             </div>
         </div>
         <div class="dropdown">
-            <button class="dropbtn">NIKO B</button>
+            <button class="dropbtn">SadBoyProlific</button>
             <div class="dropdown-content">
                 <a href="#" onclick="playSong('midnightthoughts.mp3')">Midnight Thoughts</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button class="dropbtn">Artist 1</button>
+            <div class="dropdown-content">
+                <a href="#" onclick="playSong('song1.mp3')">Song 1</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button class="dropbtn">Artist 2</button>
+            <div class="dropdown-content">
+                <a href="#" onclick="playSong('song2.mp3')">Song 2</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button class="dropbtn">Artist 3</button>
+            <div class="dropdown-content">
+                <a href="#" onclick="playSong('song3.mp3')">Song 3</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button class="dropbtn">Artist 4</button>
+            <div class="dropdown-content">
+                <a href="#" onclick="playSong('song4.mp3')">Song 4</a>
             </div>
         </div>
         <audio id="audio"></audio>
