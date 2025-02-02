@@ -134,7 +134,7 @@
             </tr>
             <tr>
                 <td>Jocelyn Flores</td>
-                <td><button class="play-button" onclick="playSong('songs/jocelynflores.mp3')"><i class="fas fa-play"></i>Play</button></td>
+                <td><button class="play-button" onclick="playSong('/music/artist/xxxtentacion/songs/jocelynflores.mp3')"><i class="fas fa-play"></i>Play</button></td>
             </tr>
             <tr>
                 <td>SAD!</td>
@@ -151,7 +151,7 @@
     <script>
         function playSong(song) {
             var audio = document.getElementById('audio');
-            audio.src = '/music/' + song;
+            audio.src = '/music/artist/xxxtentation/songs/' + song;
             audio.play();
         }
 
