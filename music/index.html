@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Music Page</title>
+    <title>XXXTENTACION Music Page</title>
     <link rel="icon" type="image/x-icon" href="/storage/images/main/favicon.ico">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
@@ -14,7 +14,7 @@
             background: black;
             color: white;
             display: flex;
-            justify-content: center;
+            flex-direction: column;
             align-items: center;
             height: 100vh;
             text-align: center;
@@ -26,7 +26,7 @@
             height: 100%;
             top: 0;
             left: 0;
-            z-index: -999;
+            z-index: -1;
         }
 
         .navbar {
@@ -38,7 +38,7 @@
             position: fixed;
             top: 0;
             width: 100%;
-            z-index: -1;
+            z-index: 1000;
         }
 
         .logo {
@@ -79,28 +79,34 @@
         }
 
         .content {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100%;
+            margin-top: 100px;
         }
 
-        .artist-button {
+        .table {
+            margin-top: 20px;
+            background: rgba(128, 128, 128, 0.34);
+        }
+
+        .table th, .table td {
+            padding: 10px 20px;
+        }
+
+        .play-button {
             background-color: #111;
             color: white;
-            padding: 16px 32px;
+            padding: 10px;
             font-size: 16px;
             border: none;
             cursor: pointer;
             transition: background 0.3s;
-            margin: 10px 0;
-            text-decoration: none;
-            display: inline-block;
         }
 
-        .artist-button:hover {
+        .play-button:hover {
             background-color: #575757;
+        }
+
+        .fa-play {
+            margin-right: 5px;
         }
     </style>
 </head>
@@ -111,25 +117,44 @@
             <img src="/pyro-logo.png" alt="Logo"> Pyro Central
         </div>
         <ul class="nav-links">
-            <li><a href="/ind4x.html"><i class="fas fa-house"></i></a></li>
-            <li><a href="/games.html"><i class="fas fa-gamepad"></i></a></li>
-            <li><a href="/apps.html"><i class="fas fa-table-cells"></i></a></li>
-            <li><a href="/forms.html"><i class="fas fa-paper-plane"></i></a></li>
-            <li><a href="/extra.html"><i class="fas fa-plus"></i></a></li>
+            <li><a href="/ind4x.html"><i class="fa-solid fa-house"></i></a></li>
+            <li><a href="/games.html"><i class="fa-solid fa-gamepad"></i></a></li>
+            <li><a href="/apps.html"><i class="fa-solid fa-table-cells"></i></a></li>
+            <li><a href="/forms.html"><i class="fa-solid fa-paper-plane"></i></a></li>
+            <li><a href="/extra.html"><i class="fa-solid fa-plus"></i></a></li>
         </ul>
     </nav>
 
     <div class="content">
-        <a class="artist-button" href="/music/artist/xxxtentacion.html">XXXTENTACION</a>
-        <a class="artist-button" href="/music/artist/nikob.html">NIKO B</a>
-        <a class="artist-button" href="/music/artist/sadboyprolific.html">SadBoyProlific</a>
-        <a class="artist-button" href="/music/artist/1.html">Artist 1</a>
-        <a class="artist-button" href="/music/artist/2.html">Artist 2</a>
-        <a class="artist-button" href="/music/artist/3.html">Artist 3</a>
-        <a class="artist-button" href="/music/artist/4.html">Artist 4</a>
+        <h1>XXXTENTACION</h1>
+        <table class="table">
+            <tr>
+                <th>Song</th>
+                <th>Play</th>
+            </tr>
+            <tr>
+                <td>Jocelyn Flores</td>
+                <td><button class="play-button" onclick="playSong('jocelynflores.mp3')"><i class="fas fa-play"></i>Play</button></td>
+            </tr>
+            <tr>
+                <td>SAD!</td>
+                <td><button class="play-button" onclick="playSong('sad.mp3')"><i class="fas fa-play"></i>Play</button></td>
+            </tr>
+            <tr>
+                <td>Moonlight</td>
+                <td><button class="play-button" onclick="playSong('moonlight.mp3')"><i class="fas fa-play"></i>Play</button></td>
+            </tr>
+        </table>
+        <audio id="audio"></audio>
     </div>
 
     <script>
+        function playSong(song) {
+            var audio = document.getElementById('audio');
+            audio.src = '/music/' + song;
+            audio.play();
+        }
+
         particlesJS('particles-js', {
             "particles": {
                 "number": { "value": 100, "density": { "enable": true, "value_area": 800 } },
