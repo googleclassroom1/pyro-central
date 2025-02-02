@@ -86,13 +86,7 @@
             height: 100%;
         }
 
-        .dropdown {
-            position: relative;
-            display: inline-block;
-            margin: 10px 0;
-        }
-
-        .dropbtn {
+        .artist-button {
             background-color: #111;
             color: white;
             padding: 16px 32px;
@@ -100,34 +94,13 @@
             border: none;
             cursor: pointer;
             transition: background 0.3s;
-        }
-
-        .dropbtn:hover {
-            background-color: #575757;
-        }
-
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            background-color: #111;
-            min-width: 160px;
-            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-            z-index: 1;
-        }
-
-        .dropdown-content a {
-            color: white;
-            padding: 12px 16px;
+            margin: 10px 0;
             text-decoration: none;
-            display: block;
+            display: inline-block;
         }
 
-        .dropdown-content a:hover {
+        .artist-button:hover {
             background-color: #575757;
-        }
-
-        .dropdown:hover .dropdown-content {
-            display: block;
         }
     </style>
 </head>
@@ -147,60 +120,16 @@
     </nav>
 
     <div class="content">
-        <div class="dropdown">
-            <button class="dropbtn">XXXTENTACION</button>
-            <div class="dropdown-content">
-                <a href="#" onclick="playSong('jocelynflores.mp3')">Jocelyn Flores</a>
-            </div>
-        </div>
-        <div class="dropdown">
-            <button class="dropbtn">NIKO B</button>
-            <div class="dropdown-content">
-                <a href="#" onclick="playSong('weed9times.mp3')">I've Smoked Weed 9 Times And Have Had Only 1 Good Experience</a>
-            </div>
-        </div>
-        <div class="dropdown">
-            <button class="dropbtn">SadBoyProlific</button>
-            <div class="dropdown-content">
-                <a href="#" onclick="playSong('midnightthoughts.mp3')">Midnight Thoughts</a>
-                <a href="#" onclick="playSong('walkingrain.mp3')">Walking Through The Rain</a>
-                <a href="#" onclick="playSong('badhabits.mp3')">Bad Habits</a>
-            </div>
-        </div>
-        <div class="dropdown">
-            <button class="dropbtn">Artist 1</button>
-            <div class="dropdown-content">
-                <a href="#" onclick="playSong('song1.mp3')">Song 1</a>
-            </div>
-        </div>
-        <div class="dropdown">
-            <button class="dropbtn">Artist 2</button>
-            <div class="dropdown-content">
-                <a href="#" onclick="playSong('song2.mp3')">Song 2</a>
-            </div>
-        </div>
-        <div class="dropdown">
-            <button class="dropbtn">Artist 3</button>
-            <div class="dropdown-content">
-                <a href="#" onclick="playSong('song3.mp3')">Song 3</a>
-            </div>
-        </div>
-        <div class="dropdown">
-            <button class="dropbtn">Artist 4</button>
-            <div class="dropdown-content">
-                <a href="#" onclick="playSong('song4.mp3')">Song 4</a>
-            </div>
-        </div>
-        <audio id="audio"></audio>
+        <a class="artist-button" href="/music/artist/xxxtentacion.html">XXXTENTACION</a>
+        <a class="artist-button" href="/music/artist/nikob.html">NIKO B</a>
+        <a class="artist-button" href="/music/artist/sadboyprolific.html">SadBoyProlific</a>
+        <a class="artist-button" href="/music/artist/1.html">Artist 1</a>
+        <a class="artist-button" href="/music/artist/2.html">Artist 2</a>
+        <a class="artist-button" href="/music/artist/3.html">Artist 3</a>
+        <a class="artist-button" href="/music/artist/4.html">Artist 4</a>
     </div>
 
     <script>
-        function playSong(song) {
-            var audio = document.getElementById('audio');
-            audio.src = '/music/' + song;
-            audio.play();
-        }
-
         particlesJS('particles-js', {
             "particles": {
                 "number": { "value": 100, "density": { "enable": true, "value_area": 800 } },
