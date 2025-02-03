@@ -13,15 +13,12 @@
       height: 100vh;
       background-color: black;
     }
-    .lds-ring, .lds-ring div {
-      box-sizing: border-box;
-      border-color: white transparent transparent transparent;
-    }
     .lds-ring {
       display: inline-block;
       position: relative;
       width: 80px;
       height: 80px;
+      cursor: pointer;
     }
     .lds-ring div {
       box-sizing: border-box;
@@ -33,6 +30,7 @@
       border: 8px solid white;
       border-radius: 50%;
       animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+      border-color: white transparent transparent transparent;
     }
     .lds-ring div:nth-child(1) {
       animation-delay: -0.45s;
@@ -54,9 +52,12 @@
   </style>
 </head>
 <body>
-  <a href="https://pyro-central.github.io/games">
-    <div class="lds-ring" id="myButton"></div>
-  </a>
+  <div class="lds-ring" id="myButton">
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
   <script>
     document.getElementById("myButton").addEventListener("click", function() {
       window.location.href = "/games.html";
