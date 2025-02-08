@@ -18,7 +18,7 @@ We welcome contributions from the community. If you have a game to add, improvem
 
 1. Make A Repository
 2. Import Your Game Source Code:
-3. DM Me On Discord @pxro.netlify.app: Or Go to The Customer Service Thing In The Corner At <a href="https://pyro-central.github.io/games.html">My Site</a> `git commit -m 'Add some feature'`
+3. DM Me On Discord @pxro.netlify.app: Or Go to The Customer Service Thing In The Corner At <a href="https://pyro-central.github.io/games.html">My Site</a>
 4. Give Me The Link:
 5. Wait For Me to DM Back
 
