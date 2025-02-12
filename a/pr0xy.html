@@ -141,6 +141,65 @@
             padding: 5px 10px;
             border-radius: 5px;
         }
+
+        #searchbar {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 600px;
+            height: 50px;
+            border: transparent;
+            border-radius: 20px;
+            box-shadow: 0 0 5px 1px #FFFFFF, 0 0 10px 2px #FFFFFF, 0 0 15px 3px #7F7FFF;
+        }
+        
+        #ua {
+            background-color: transparent;
+            color: #ffffff;
+            font-size: 1.5rem;
+            position: relative;
+            top: 50%;
+            left: 16px;
+            border: none;
+            outline: none;
+            transform: translate(0, -50%);
+            width: 526px;
+            height: 44px;
+            font-weight: bold;
+            color: #ffffff;
+            caret-color: #ffffff;
+        }
+
+        #ua::placeholder {
+            color: #ffffff;
+            opacity: 0.5;
+        }
+        
+        #search-icon {
+            top: 50%;
+            left: 10px;
+            transform: translate(0, -50%);
+            color: #FFFFFF;
+            position: relative;
+            font-size: 2rem;
+            height: 44px;
+        }
+
+        #uvf {
+            width: 100%;
+            height: calc(100% - 50px);
+            border: none;
+        }
+
+        #quote {
+            position: fixed;
+            top: 40%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-weight: bold;
+            font-size: 1.3rem;
+        }
     </style>
     <script type="text/javascript">window.$crisp=[];window.CRISP_WEBSITE_ID="98006de2-e6a4-482c-bea7-75cd2e199619";(function(){d=document;s=d.createElement("script");s.src="https://client.crisp.chat/l.js";s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();</script>
 </head>
@@ -151,7 +210,7 @@
 
     <nav class="navbar">
         <div class="logo">
-            <img src="pyro-logo.png" alt="Logo"> Pyro Central
+            <img src="/pyro-logo.png" alt="Logo"> Pyro Central
         </div>
         <div class="toggle" onclick="document.querySelector('.navbar').classList.toggle('active')">&#9776;</div>
         <ul class="nav-links">
@@ -163,31 +222,19 @@
         </ul>
     </nav>
 
-    <div class="container">
-        <div class="image-item" data-label="Chat">
-            <a href="/a/chat/index.html">
-                <img src="images/chat.jpg" alt="Chat">
-                <div class="label">Chat</div>
-            </a>
+    <p id="quote">"<span id="quote-content"></span>"</p>
+    <script src="/quote.js"></script>
+
+    <form id="uf" autocomplete="off" autocapitalize="off">
+        <input id="us" value="https://duckduckgo.com/?q=%s" type="hidden">
+        <div id="searchbar">
+           <i class="fas fa-search" id="search-icon"></i>
+           <input id="ua" type="text" placeholder="Search or type URL" class="form__input">
         </div>
-         <div class="image-item" data-label="Calculator">
-            <a href="/a/calc/index.html">
-                <img src="/a/calc/calc.png" alt="Calculator">
-                <div class="label">Calculator</div>
-            </a>
-        </div>
-        <div class="image-item" data-label="Music">
-            <a href="/music/">
-                <img src="/music.png" alt="Music">
-                <div class="label">Music</div>
-            </a>
-        </div>
-        <div class="image-item" data-label="Pr0xy">
-            <a href="/a/pr0xy.html">
-                <img src="/pr0xy.png" alt="Pr0xy">
-                <div class="label">Pr0xy</div>
-            </a>
-        </div>
+    </form>
+    <div class="desc left-margin">
+        <p id="ue"></p>
+        <pre id="uc"></pre>
     </div>
 
     <script>
@@ -306,4 +353,9 @@
             document.querySelector('.navbar').classList.toggle('active');
         });
     </script>
+    <script src="/app/uv/uv.bundle.js" charset="UTF-8" defer></script>
+    <script src="/app/uv/uv.config.js" charset="UTF-8" defer></script>
+    <script src="/app/worker.js" charset="UTF-8" defer></script>
+    <script src="/app/search.js" charset="UTF-8" defer></script>
+    <script src="/app/index.js" charset="UTF-8" defer></script>
 </body></html>
