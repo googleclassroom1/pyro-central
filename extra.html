@@ -180,6 +180,8 @@
         </div>
          
     </div>
+    <h1>about:blank</h1>
+    <button id="cloaker-button">click me!</button>
 
     <script>
         // Initialize particles.js
@@ -295,6 +297,47 @@
 
         document.querySelector('.toggle').addEventListener('click', function() {
             document.querySelector('.navbar').classList.toggle('active');
+        });
+    </script>
+    <script>
+        // Cloaker function
+        document.getElementById('cloaker-button').addEventListener('click', function() {
+            var url = window.location.href;
+            var win;
+
+            if (win) {
+                win.focus();
+            } else {
+                win = window.open();
+                win.document.body.style.margin = '0';
+                var originalTitle = document.title;
+                var faviconElement = document.querySelector('link[rel="icon"]');
+                var faviconURL = faviconElement ? faviconElement.href : '';
+                win.document.title = originalTitle;
+                if (faviconURL) {
+                    var favicon = win.document.createElement('link');
+                    favicon.rel = 'icon';
+                    favicon.href = faviconURL;
+                    win.document.head.appendChild(favicon);
+                }
+                var iframe = win.document.createElement('iframe');
+                iframe.style.border = 'none';
+                iframe.style.width = '100%';
+                iframe.style.height = '100%';
+                iframe.style.margin = '0';
+                iframe.style.overflow = 'hidden';
+                iframe.src = url;
+                win.document.body.appendChild(iframe);
+                window.location.replace("https://ixl.com");
+
+                var interval = setInterval(function() {
+                    if (win.closed) {
+                        clearInterval(interval);
+                        win = undefined;
+                    }
+                }, 500);
+            }
+            this.textContent = "About:blank";
         });
     </script>
 </body></html>
