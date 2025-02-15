@@ -8,6 +8,9 @@ const quoteChoices = [
     "What's the hardest part of a vegetable to eat? The weelchair.",
     "Dating is like algebra. You look at your X and just wonder Y.",
     "What do you call an autistic kid with a gun? Special forces!",
+    "never give up on your dreams even if someone makes you - raf",
+    "history is told by the winners - mother",
+    "#keeponslaying - seb",
 ];
 
 var quoteChoice = Math.floor(Math.random() * quoteChoices.length);
